@@ -27,6 +27,15 @@ config.json
 }
 ```
 
++ prefix - This is what makes a command stand out.
++ playing - Sets the bot's "playing" status to this string.
++ administrators - Snowflake ID of the users that can use ANY AND ALL commands.
++ log_channel - The channel's Snowflake ID that you want important messages to go to.
++ voice_channel - Snowflake ID of the voice channel you want the bot to play the music on.
++ voice_channel_chat - Chat channel associated with the voice channel (or just a random channel), this is where the bot announces that a playlist is done.
++ ffmpeg_loc - The location of ffmpeg, if you installed in on a Unix system it's most likely `/usr/bin/ffmpeg`. I will be uploading instructions if you are using Debian 8 (It's currently not included).
++ discord_token - This is where you will need to put your discord bot token. [Instructions here](https://discordapp.com/developers/applications/)
+
 setup.sh
 ```sh
 #!/bin/sh
