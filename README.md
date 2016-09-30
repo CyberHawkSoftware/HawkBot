@@ -2,6 +2,7 @@
 <h1 align="center">HawkBot</h1>
 In order to get the bot up and running you will need to get a few things in order.  
  
+ * You must have NodeJS installed
  * You must have ffmpeg on your system.
  * `run npm install` after downloading.
  * make sure you have `./mp3`, `config.json`
