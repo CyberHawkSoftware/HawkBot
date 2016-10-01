@@ -5,7 +5,9 @@ In order to get the bot up and running you will need to get a few things in orde
  * You must have NodeJS installed
  * You must have ffmpeg on your system.
  * `run npm install` after downloading.
- * make sure you have `./mp3`, `config.json`
+ * make sure you have `./mp3`, `config.json`  
+
+####It has been tested on Linux, OSX, and Windows! It runs well on a Raspberry Pi!
 
 #
 ####Here are sample files to use
