@@ -40,6 +40,7 @@ module.exports = function command(bot, info)
                  else
                  {
                     //adds the song to the playlist once it's downloaded
+                    console.log("Downloading " + songInfo.title);
                     info.audio.playlist.push({"song_name": songInfo.title, "file": title})
                     console.log("Downloaded " + songInfo.title);
                     info.audio.start();
