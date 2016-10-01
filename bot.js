@@ -39,7 +39,6 @@ bot.on('message', function(user, userID, channelID, message, event) {
         message: message,
         event: event
     };
-    details.serverID = getServer();
     //checks to see if it started with the prefix(possibly a command)
     details.isCommandForm = utility.isCommandForm(message);
     //was it a direct message?

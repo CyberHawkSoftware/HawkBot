@@ -29,6 +29,7 @@ module.exports = function command(bot, info)
               {
                 //gets rid of any spaces in the file name
                 let title = songInfo.title.replace(/ /g, "")+".mp3";
+                console.log("Recieved info for " + songInfo.title);
                 //download the song
                 dl.getMP3(yID, title, function(err, result)
                {
@@ -40,6 +41,7 @@ module.exports = function command(bot, info)
                  {
                     //adds the song to the playlist once it's downloaded
                     info.audio.playlist.push({"song_name": songInfo.title, "file": title})
+                    console.log("Downloaded " + songInfo.title);
                     info.audio.start();
                  }
                });
