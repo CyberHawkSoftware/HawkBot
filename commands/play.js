@@ -28,7 +28,7 @@ module.exports = function command(bot, info)
               else
               {
                 //gets rid of any spaces in the file name
-                let title = songInfo.title.replace(/ /g, "")+".mp3";
+                let title = songInfo.title.replace(/ /g, "").replace(/[\/\\]/g, "_")+".mp3";
                 console.log("Recieved info for " + songInfo.title);
                 //download the song
                 dl.getMP3(yID, title, function(err, result)
@@ -55,7 +55,14 @@ module.exports = function command(bot, info)
             case 1:
               return;
             case 2:
-              getData(details.args[1].split('='));
+              if(details.args[1].contains("https://youtu.be/"))
+              {
+                getData(details.args[1].replace(/https:\/\/youtu.be\//g,""));
+              }
+              else
+              {
+                getData(details.args[1].split('='));
+              }
               return;
           }
         }
