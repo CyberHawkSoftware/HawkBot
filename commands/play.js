@@ -18,7 +18,7 @@ module.exports = function command(bot, info)
           const getData = function(parsed)
           {
             //get in the information from the youtube ID
-            const yID = parsed[1] || "noID";
+            const yID = parsed || "noID";
             yti(yID, function(err, songInfo)
             {
               if(err)
@@ -61,7 +61,7 @@ module.exports = function command(bot, info)
               }
               else
               {
-                getData(details.args[1].split('='));
+                getData(details.args[1].split('=')[1] || "noid");
               }
               return;
           }
