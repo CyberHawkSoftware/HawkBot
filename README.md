@@ -1,5 +1,6 @@
 <p align="center"><img src="http://www.cyberhawk.co/logo-alt.svg"></p>
 <h1 align="center">HawkBot</h1>
+[![GitHub issues](https://img.shields.io/github/issues/CyberHawkSoftware/HawkBot.svg)](https://github.com/CyberHawkSoftware/HawkBot/issues)  
 In order to get the bot up and running you will need to get a few things in order.  
  
  * You must have NodeJS installed
