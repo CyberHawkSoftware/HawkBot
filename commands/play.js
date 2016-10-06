@@ -30,22 +30,32 @@ module.exports = function command(bot, info)
                 //gets rid of any spaces in the file name
                 let title = songInfo.title.replace(/ /g, "").replace(/[\/\\]/g, "_")+".mp3";
                 console.log("Recieved info for " + songInfo.title);
-                //download the song
-                dl.getMP3(yID, title, function(err, result)
-               {
-                 if(err)
-                 {
-                   console.log(err);
-                 }
-                 else
-                 {
-                    //adds the song to the playlist once it's downloaded
-                    console.log("Downloading " + songInfo.title);
-                    info.audio.playlist.push({"song_name": songInfo.title, "file": title})
-                    console.log("Downloaded " + songInfo.title);
-                    info.audio.start();
-                 }
-               });
+                //looks to see if the song requested is already downloaded
+                //if it is, don't redownload it
+                if(info.audio.searchSong(songInfo.title))
+                {
+                  info.audio.playlist.push({"song_name": songInfo.title, "file": title});
+                  console.log("Song exists on playlist, file is present. No need to download it again");
+                }
+                else
+                {
+                   //download the song only if it's not currently downloaded
+                  dl.getMP3(yID, title, function(err, result)
+                  {
+                    if(err)
+                    {
+                      console.log(err);
+                    }
+                    else
+                    {
+                        //adds the song to the playlist once it's downloaded
+                        console.log("Downloading " + songInfo.title);
+                        info.audio.playlist.push({"song_name": songInfo.title, "file": title})
+                        console.log("Downloaded " + songInfo.title);
+                        info.audio.start();
+                    }
+                  });
+                }
               }
             });
           }
