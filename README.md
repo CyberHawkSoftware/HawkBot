@@ -1,6 +1,6 @@
 <p align="center"><img src="http://www.cyberhawk.co/logo-alt.svg"></p>
 <h1 align="center">HawkBot</h1>
-[![GitHub issues](https://img.shields.io/github/issues/CyberHawkSoftware/HawkBot.svg)](https://github.com/CyberHawkSoftware/HawkBot/issues)  
+[![GitHub issues](https://img.shields.io/github/issues/CyberHawkSoftware/HawkBot.svg)](https://github.com/CyberHawkSoftware/HawkBot/issues) [![Join the chat at https://gitter.im/CyberHawkSoftware/HawkBot](https://badges.gitter.im/CyberHawkSoftware/HawkBot.svg)](https://gitter.im/CyberHawkSoftware/HawkBot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
 In order to get the bot up and running you will need to get a few things in order.  
  
  * You must have NodeJS installed
@@ -10,7 +10,7 @@ In order to get the bot up and running you will need to get a few things in orde
 
 ####It has been tested on Linux, OSX, and Windows! It runs well on a Raspberry Pi!
 
-[![Join the chat at https://gitter.im/CyberHawkSoftware/HawkBot](https://badges.gitter.im/CyberHawkSoftware/HawkBot.svg)](https://gitter.im/CyberHawkSoftware/HawkBot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 #
 ####Here are sample files to use
