@@ -39,22 +39,8 @@ module.exports = function command(bot, info)
                 }
                 else
                 {
-                   //download the song only if it's not currently downloaded
-                  dl.getMP3(yID, title, function(err, result)
-                  {
-                    if(err)
-                    {
-                      console.log(err);
-                    }
-                    else
-                    {
-                        //adds the song to the playlist once it's downloaded
-                        console.log("Downloading " + songInfo.title);
-                        info.audio.playlist.push({"song_name": songInfo.title, "file": title})
-                        console.log("Downloaded " + songInfo.title);
-                        info.audio.start();
-                    }
-                  });
+                   //send info to the downloader process to download a song.
+                   info.audio.downloader.send({id: yID, title: songInfo.title, file: title});
                 }
               }
             });
