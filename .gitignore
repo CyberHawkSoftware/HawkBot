@@ -4,3 +4,6 @@ node_modules/*
 mp3/*
 #Don't include config.json to avoid showing bot token/api tokens
 config.json
+#Don't include ffmpeg
+ffmpeg
+config.json

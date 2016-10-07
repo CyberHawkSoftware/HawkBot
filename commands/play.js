@@ -51,7 +51,7 @@ module.exports = function command(bot, info)
             case 1:
               return;
             case 2:
-              if(details.args[1].contains("https://youtu.be/"))
+              if(details.args[1].includes("https://youtu.be/"))
               {
                 getData(details.args[1].replace(/https:\/\/youtu.be\//g,""));
               }

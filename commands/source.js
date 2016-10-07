@@ -2,7 +2,7 @@
 module.exports = function command(bot, info)
 {
     "use strict";
-    const pack = require('./package.json');
+    const pack = require('../package.json');
     return {
         alias: ['s'],
         description: "(Gets the bot's source)",
