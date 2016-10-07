@@ -40,6 +40,7 @@ module.exports = function command(bot, info)
                 else
                 {
                    //send info to the downloader process to download a song.
+                   console.log("Downloading " + songInfo.title);
                    info.audio.downloader.send({id: yID, title: songInfo.title, file: title});
                 }
               }
