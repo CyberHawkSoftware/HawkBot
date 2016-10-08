@@ -127,7 +127,6 @@ bot.on("disconnect",function(errMsg, code){
     {
         //reconnect, initiate audio, and log the instance into log.txt
         bot.connect();
-        bot.audio.initiate();
         fs.appendFile('log.txt', 'Error occured: Error Code ' + code +' - attempting to login ' + new Date() + '\n' , function (err) {});
     }
     else

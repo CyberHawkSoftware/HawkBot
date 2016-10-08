@@ -4,7 +4,8 @@
   "description": "Discord bot made in node js",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node setup.js"
   },
   "repository": {
     "type": "git",
