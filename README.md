@@ -13,7 +13,7 @@ In order to get the bot up and running you will need to get a few things in orde
 
 
 #
-####Here is a sample config file to use  
+####Here is a sample config file to use, also a copy in the repo `config.example.json`  
 config.json
 ```json
 

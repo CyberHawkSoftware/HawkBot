@@ -1,0 +1,14 @@
+{
+    "prefix": ";",
+    "playing": "Try %prefixhelp ;)",
+    "administrators": [""],
+    "mod_roles":[""],
+    "elevated_roles":[""],
+    "log_channel":"",
+    "voice_channel":"",
+    "voice_channel_chat": "",
+    "ffmpeg_loc": "",
+    "api": {
+        "discord_token": ""
+    }
+}
