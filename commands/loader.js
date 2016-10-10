@@ -78,7 +78,7 @@ module.exports = function commandLoad(bot,info)
             Object.keys(commands).forEach(function(key){ 
                 lines += filter(filterArr,key);;             
             });
-            lines += '\n#Example: !jisho song counter --list';
+            lines += '\n#Example: ' + config.prefix + 'jisho song counter --list';
             lines = wrap.replace("%content",lines);
             bot.sendMessage({
                 to: details.channelID,
