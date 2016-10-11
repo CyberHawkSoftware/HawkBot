@@ -30,6 +30,6 @@
     "twitter": "^1.4.0",
     "urlencode": "^1.1.0",
     "youtube-info": "^1.1.1",
-    "youtube-mp3-downloader": "^0.4.3"
+    "youtube-mp3-downloader": "^0.4.4"
   }
 }
