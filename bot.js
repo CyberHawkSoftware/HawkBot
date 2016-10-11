@@ -47,19 +47,29 @@ bot.on('message', function(user, userID, channelID, message, event) {
     //if the message is in command form, process it
     if(details.isCommandForm)
     {
-        details.serverID = utility.getServerID(details.channelID);
+
         //is the message sender listed as an administrator?
         details.isAdministrator = utility.isAdministrator(details.userID);
-        if(!details.isAdministrator)
+        if(details.isDirectMessage)
         {
-            //does the message sender have elevated priveleges?
-            details.isMod = utility.checkModPerm(details.userID, details.serverID);
-            if(!details.isMod)
-            {
-                //if sender is not a mod, check to see if they are elevated
-                details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
-            }
+            details.isMod = false;
+            details.isElevated = false;
         }
+        else
+        {
+            if(!details.isAdministrator)
+            {
+                //does the message sender have elevated priveleges?
+                details.isMod = utility.checkModPerm(details.userID, details.serverID);
+                if(!details.isMod)
+                {
+                    //if sender is not a mod, check to see if they are elevated
+                    details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
+                }
+            }
+            details.serverID = utility.getServerID(details.channelID);
+        }
+
         //separate the command from the rest of the string
         let cmd = utility.stripPrefix(message);
         let keyword = cmd.split(' ')[0];
