@@ -46,3 +46,4 @@ config.json
 + `discord_token` - This is where you will need to put your discord bot token. [Instructions here](https://discordapp.com/developers/applications/)
 
 Just run `npm install` after you've cloned the repo. `setup.js` will run after you install to automatically create the `./mp3` folder.
+Once you're all set to go, please use `npm start` to actually start the bot.
