@@ -28,7 +28,7 @@ module.exports = function command(bot, info)
               else
               {
                 //gets rid of any spaces in the file name
-                let title = songInfo.title.replace(/ /g, "").replace(/[\/\\\\|\?\"]/g, "_")+".mp3";
+                let title = songInfo.title.replace(/ /g, "").replace(/[\/\\\\|\?\"\*]/g, "_")+".mp3";
                 console.log("Recieved info for " + songInfo.title);
                 //looks to see if the song requested is already downloaded
                 //if it is, don't redownload it
