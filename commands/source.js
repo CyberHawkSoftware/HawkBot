@@ -4,7 +4,7 @@ module.exports = function command(bot, info)
     "use strict";
     const pack = require('../package.json');
     return {
-        alias: ['s'],
+        alias: ['so'],
         description: "(Gets the bot's source)",
         permissions: "public",
         action: function(details)

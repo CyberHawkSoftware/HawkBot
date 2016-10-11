@@ -8,6 +8,7 @@ In order to get the bot up and running you will need to get a few things in orde
  * `run npm install` after downloading.
  * make sure you have a `config.json` - a sample one is provided below
 
+####Shoutout to Frosthaven for the overall idea of the layout and a few functions from utility as well as the memory command! :)  
 ####It has been tested on Linux, OSX, and Windows! It runs well on a Raspberry Pi!
 
 

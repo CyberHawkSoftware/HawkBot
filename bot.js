@@ -128,6 +128,9 @@ bot.on("disconnect",function(errMsg, code){
     if(!info.manualKill)
     {
         //reconnect, initiate audio, and log the instance into log.txt
+        //LEAVING THE VOICE CHANNEL IS EXTREMELY IMPORTANT. If you don't, the bot will not be able to get back into
+        //the voice channel properly on a reconnect.
+        bot.leaveVoiceChannel(info.config.voice_channel);
         bot.connect();
         fs.appendFile('log.txt', 'Error occured: Error Code ' + code +' - attempting to login ' + new Date() + '\n' , function (err) {});
     }
