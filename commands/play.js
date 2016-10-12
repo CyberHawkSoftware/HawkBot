@@ -46,26 +46,31 @@ module.exports = function command(bot, info)
               }
             });
           }
+          //make sure you aren't trying to manage music with a direct message
+          if(!details.isDirectMessage)
+          {
           //check to make sure that you can only add to the queue from the server that you are playing music from.
           if(details.serverID === info.utility.getServerID(info.config.voice_channel))
           {
-            if(details.input === "") {return;}
-            switch(details.args.length)
-            {
-              case 1:
-                return;
-              case 2:
-                if(details.args[1].includes("https://youtu.be/"))
-                {
-                  getData(details.args[1].replace(/https:\/\/youtu.be\//g,""));
-                }
-                else
-                {
-                  getData(details.args[1].split('=')[1] || "noid");
-                }
-                return;
+              if(details.input === "") {return;}
+              switch(details.args.length)
+              {
+                case 1:
+                  return;
+                case 2:
+                  if(details.args[1].includes("https://youtu.be/"))
+                  {
+                    getData(details.args[1].replace(/https:\/\/youtu.be\//g,""));
+                  }
+                  else
+                  {
+                    getData(details.args[1].split('=')[1] || "noid");
+                  }
+                  return;
+              }
             }
           }
+
         }
     };
 };

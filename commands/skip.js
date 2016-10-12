@@ -9,11 +9,15 @@ module.exports = function command(bot, info)
         permissions: "public",
         action: function(details)
         {
-          if(details.serverID === info.utility.getServerID(info.config.voice_channel))
+          if(!details.isDirectMessage)
           {
-            console.log("Song skipped");
-            info.audio.currentSong.unpipe();
+            if(details.serverID === info.utility.getServerID(info.config.voice_channel))
+            {
+              console.log("Song skipped");
+              info.audio.currentSong.unpipe();
+            }
           }
+
 
         }
     };
