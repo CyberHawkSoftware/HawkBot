@@ -59,6 +59,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
         {
             if(!details.isAdministrator)
             {
+                details.serverID = utility.getServerID(details.channelID);
                 //does the message sender have elevated priveleges?
                 details.isMod = utility.checkModPerm(details.userID, details.serverID);
                 if(!details.isMod)
@@ -67,7 +68,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
                     details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
                 }
             }
-            details.serverID = utility.getServerID(details.channelID);
+            
         }
 
         //separate the command from the rest of the string
