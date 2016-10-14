@@ -142,7 +142,7 @@ module.exports = function command(bot, info)
                         }
                         else
                         {
-                            definitions+= concatArr(sensesArr[i].english_definitions) + " - " + concatArr(sensesArr[i].tags) + concatArr(sensesArr[i].info) + "\n";
+                            definitions+= concatArr(sensesArr[i].english_definitions) + " - " + concatArr(sensesArr[i].tags) + ". " + concatArr(sensesArr[i].info) + "\n";
                         }
                     }
                     else
@@ -154,7 +154,7 @@ module.exports = function command(bot, info)
                         }
                         else
                         {
-                            definitions+= concatArr(sensesArr[i].english_definitions) + " - " + concatArr(sensesArr[i].tags) + concatArr(sensesArr[i].info) + "\n";
+                            definitions+= concatArr(sensesArr[i].english_definitions) + " - " + concatArr(sensesArr[i].tags) + ". "+ concatArr(sensesArr[i].info) + "\n";
                         }
                     }
                 }
