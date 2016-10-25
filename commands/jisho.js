@@ -29,7 +29,7 @@ module.exports = function command(bot, info)
                         let mess = "";
                         if(body.data.length > 10)
                         {
-                            mess += "The lookup has more than 10 items from Jisho. Try jisho(j) <word> list for the list.";
+                            mess += "The lookup has more than 10 items from Jisho. Try jisho(j) <word> --list for the list.";
                         }
                         bot.sendMessage({
                             to: details.channelID,
