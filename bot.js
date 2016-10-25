@@ -11,7 +11,6 @@ const info = {};
 info.config = require('./config.json');
 const bot = new discord.Client({token: info.config.api.discord_token, autorun: true });
 info.utility = require('./lib/utility.js')(bot, info);
-info.audio = require('./lib/audio.js')(bot, info);
 info.commands = require('./commands/loader.js')(bot,info);
 info.rules = info.utility.codeBlock(rules,"md");
 info.manualKill = false;
@@ -27,8 +26,6 @@ console.log(bot.username + " - (" + bot.id + ")");
         name: utility.switch(info.config.playing)
         }
     });
-    //Start the audio lib
-    info.audio.initiate();
 });
 //When there is a message fired that the bot can see, process it
 bot.on('message', function(user, userID, channelID, message, event) {
@@ -138,10 +135,7 @@ bot.on("disconnect",function(errMsg, code){
     //if you didn't manually kill the bot
     if(!info.manualKill)
     {
-        //reconnect, initiate audio, and log the instance into log.txt
-        //LEAVING THE VOICE CHANNEL IS EXTREMELY IMPORTANT. If you don't, the bot will not be able to get back into
-        //the voice channel properly on a reconnect.
-        bot.leaveVoiceChannel(info.config.voice_channel);
+        //reconnect and log the instance into log.txt
         bot.connect();
         fs.appendFile('log.txt', 'Error occured: Error Code ' + code +' - attempting to login ' + new Date() + '\n' , function (err) {});
     }
