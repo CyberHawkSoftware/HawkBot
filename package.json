@@ -5,8 +5,6 @@
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node setup.js",
-    "prestart": "node prune.js",
     "start": "node bot.js"
   },
   "repository": {

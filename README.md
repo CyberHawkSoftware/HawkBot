@@ -24,10 +24,6 @@ config.json
     "administrators": [""],
     "mod_roles":[""],
     "elevated_roles":[""],
-    "log_channel":"",
-    "voice_channel":"",
-    "voice_channel_chat": "",
-    "ffmpeg_loc": "",
     "api": {
         "discord_token": ""
     }
@@ -39,10 +35,6 @@ config.json
 + `administrators` - Snowflake ID of the users that can use ANY AND ALL commands.
 + `mod_roles` - Snowflake IDs of the roles that are able to use mod commands.
 + `elevated_roles` - Snowflake IDs of the roles that are able to use elevated commands.
-+ `log_channel` - The channel's Snowflake ID that you want important messages to go to.
-+ `voice_channel` - Snowflake ID of the voice channel you want the bot to play the music on.
-+ `voice_channel_chat` - Chat channel associated with the voice channel (or just a random channel), this is where the bot announces that a playlist is done.
-+ `ffmpeg_loc` - The location of ffmpeg, if you installed in on a Unix system it's most likely `/usr/bin/ffmpeg`. I will be uploading instructions if you are using Debian 8 (It's currently not included).
 + `discord_token` - This is where you will need to put your discord bot token. [Instructions here](https://discordapp.com/developers/applications/)
 
 Just run `npm install` after you've cloned the repo. `setup.js` will run after you install to automatically create the `./mp3` folder.
