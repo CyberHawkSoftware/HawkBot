@@ -23,7 +23,7 @@ console.log(bot.username + " - (" + bot.id + ")");
     //Set the bot's "Playing" to the config file's playing
     bot.setPresence({
         game:{
-        name: utility.switch(info.config.playing)
+        name: utility.filter(info.config.playing)
         }
     });
 });
