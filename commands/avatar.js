@@ -20,7 +20,13 @@ module.exports = function command(bot, info)
           {
             bot.sendMessage({
               to: details.channelID,
-              message: getAvatar(details.userID)
+              embed: {
+                title: bot.users[details.userID].username +"'s Avatar",
+                image: {
+                  url: getAvatar(details.userID)
+                },
+                color: parseInt('808080',16)
+              }
             })
           }
           else if(details.args.length == 2)
@@ -28,10 +34,26 @@ module.exports = function command(bot, info)
             let uid = info.utility.stripUID(details.args[1]);
             if(uid)
             {
-              bot.sendMessage({
-                to: details.channelID,
-                message: getAvatar(uid)
-              });
+              let link = getAvatar(uid);
+              if(link.includes("null.jpg"))
+              {
+                bot.sendMessage({
+                  to: details.channelID,
+                  message: "The user has a default avatar."
+                })
+              }
+              else
+              {
+                bot.sendMessage({
+                  to: details.channelID,
+                  embed: {
+                    title: bot.users[uid].username+"'s Avatar",
+                    image: {
+                      url: getAvatar(uid)
+                    }
+                  }
+                });
+              }
             }
           }
           else
