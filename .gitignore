@@ -6,3 +6,6 @@ mp3/*
 config.json
 #Don't include ffmpeg if it's stored here
 ffmpeg
+#Don't include test commannds
+commands/embedtest.js
+commands/test.js

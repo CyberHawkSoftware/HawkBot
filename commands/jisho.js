@@ -33,7 +33,11 @@ module.exports = function command(bot, info)
                         }
                         bot.sendMessage({
                             to: details.channelID,
-                            message: prettyDisplay(body,n) + mess
+                            embed:{
+                                title: '',
+                                description: '',
+                                fields: prettyDisplay(body,n)
+                            }
                         });
                     }
                 });
@@ -57,8 +61,11 @@ module.exports = function command(bot, info)
                         {
                             bot.sendMessage({
                                 to: details.userID,
-                                message: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
-                            });
+                                embed: {
+                                    title: 'Reading List:',
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                }
+                        });
                         }
                         else if(body.data.length > 10 && !details.isDirectMessage)
                         {
@@ -68,14 +75,20 @@ module.exports = function command(bot, info)
                             });
                             bot.sendMessage({
                                 to: details.userID,
-                                message: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                embed: {
+                                    title: 'Reading List:',
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                }
                             });
                         }
                         else
                         {
                             bot.sendMessage({
                                 to: details.channelID,
-                                message: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                embed: {
+                                    title: 'Reading List:',
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                }
                             });
                         }
 
@@ -182,10 +195,12 @@ module.exports = function command(bot, info)
                 return s;
             }
             //takes all of the data found and displays it nicely
-            const prettyDisplay = function(api,num)
+            const prettyDisplay = function(api, num)
             {
-                "use strict";
-                var s ="";
+                let readField = {name: "Reading(s):",inline: true};
+                let tagField = {name: "Tag(s):",inline: true};
+                let defField = {name: "Definition(s):", inline: false};
+                let fields = [];
                 try
                 {
                     if(api.data[num] == undefined)
@@ -195,23 +210,27 @@ module.exports = function command(bot, info)
                     else
                     {
                         const tags = getTags(api.data[num]);
-                        s+= getJapanese(api.data[num].japanese) + '\n';
+                        readField.value = getJapanese(api.data[num].japanese);
+                        fields.push(readField);
                         if(tags != "")
                         {
-                            s += tags + '\n';
+                            tagField.value = tags;
+                            fields.push(tagField);
                         }
-                        s += getDefinitions(api.data[num].senses);
+                        defField.value = getDefinitions(api.data[num].senses);
+                        if(api.data.length > 10)
+                        {
+                            defField.value += "The lookup has more than 10 items from Jisho. Try jisho(j) <word> --list for the list.";
+                        }
+                        fields.push(defField);
                     }
-
                 }
                 catch(err)
                 {
                     console.log( 'Error occured: Error Code ' + err +' - something was looked up that would break bot. Writing to dump file.' + new Date());
-                    s = "Error occured with that lookup. Try the command again. If that command doesn't work, please contact CyberRonin";
+                    fields = [{name:"Error",value: "Error occured with that lookup. Try the command again. If that command doesn't work, please contact CyberRonin",inline:true}];
                 }
-                out.return = s;
-                
-                return s;
+                return fields;
             }
             //grabs the tags from the call
             const getTags = function(dataArr)
