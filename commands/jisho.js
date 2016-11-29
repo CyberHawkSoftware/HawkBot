@@ -26,17 +26,13 @@ module.exports = function command(bot, info)
 
                     if (!error && response.statusCode === 200)
                     {
-                        let mess = "";
-                        if(body.data.length > 10)
-                        {
-                            mess += "The lookup has more than 10 items from Jisho. Try jisho(j) <word> --list for the list.";
-                        }
                         bot.sendMessage({
                             to: details.channelID,
                             embed:{
                                 title: '',
                                 description: '',
-                                fields: prettyDisplay(body,n)
+                                fields: prettyDisplay(body,n),
+                                color: parseInt('a7fcd0', 16)
                             }
                         });
                     }
@@ -63,7 +59,8 @@ module.exports = function command(bot, info)
                                 to: details.userID,
                                 embed: {
                                     title: 'Reading List:',
-                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition",
+                                    color: parseInt('a7fcd0', 16)
                                 }
                         });
                         }
@@ -77,7 +74,8 @@ module.exports = function command(bot, info)
                                 to: details.userID,
                                 embed: {
                                     title: 'Reading List:',
-                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition",
+                                    color: parseInt('a7fcd0', 16)
                                 }
                             });
                         }
@@ -87,7 +85,8 @@ module.exports = function command(bot, info)
                                 to: details.channelID,
                                 embed: {
                                     title: 'Reading List:',
-                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition"
+                                    description: listJapanese(body) + "\nUse jisho(j) <word> <number on list> to get that definition",
+                                    color: parseInt('a7fcd0', 16)
                                 }
                             });
                         }
