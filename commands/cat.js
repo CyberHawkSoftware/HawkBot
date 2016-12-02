@@ -28,7 +28,7 @@ module.exports = function command(bot, info)
                 bot.sendMessage({
                   to: details.channelID,
                   embed:{
-                    title: '猫',
+                    title: '',
                     description: '',
                     image:{
                       url: catResponse.file
