@@ -13,7 +13,6 @@ module.exports = function command(bot, info)
         permissions: "public",
         action: function(details)
         {
-          console.log("in cat");
           const sendCat = function()
           {
             const request = require("request");
@@ -23,14 +22,13 @@ module.exports = function command(bot, info)
               json: false
             }, function (error, response, body)
             {
-              console.log(`${response.statusCode}`);
               if(!error && response.statusCode === 200)
               {
                 let catResponse = JSON.parse(body);
                 bot.sendMessage({
                   to: details.channelID,
                   embed:{
-                    title: '',
+                    title: '猫',
                     description: '',
                     image:{
                       url: catResponse.file
