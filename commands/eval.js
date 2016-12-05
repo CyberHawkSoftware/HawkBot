@@ -11,6 +11,13 @@ module.exports = function command(bot, info)
         permissions: "private",
         action: function(details)
         {
+          const echo = function(str)
+          {
+            bot.sendMessage({
+              to: details.channelID,
+              message: str
+            });
+          }
           if(details.input === "") {return;}
           else
           {
