@@ -17,6 +17,7 @@ info.manualKill = false;
 const utility = info.utility;
 const config = info.config;
 const commands = info.commands;
+info.start = new Date();
 //When the bot is ready
 bot.on('ready', function() {
 console.log(bot.username + " - (" + bot.id + ")");

@@ -9,6 +9,36 @@ module.exports = function command(bot, info)
         permissions: "public",
         action: function(details)
         {
+                let now = new Date();
+                const convertDate = function(ms)
+                {
+                    let str = "";
+                    let x = ms / 1000;
+                    let seconds = Math.floor(x % 60);
+                    x /= 60;
+                    let minutes = Math.floor(x % 60);
+                    x /= 60;
+                    let hours = Math.floor(x % 24);
+                    x /= 24;
+                    let days = Math.floor(x);
+                    if(days > 0)
+                    {
+                        str += `${days}d`;
+                    }
+                    if(hours > 0)
+                    {
+                        str += `${hours}h`;
+                    }
+                    if(minutes > 0)
+                    {
+                        str += `${minutes}m`;
+                    }
+                    if(seconds > 0)
+                    {
+                        str += `${seconds}s`;
+                    }
+                    return str;
+                }
                 bot.sendMessage({
                 to: details.channelID,
                 embed: {
@@ -39,6 +69,11 @@ module.exports = function command(bot, info)
                     {
                         name: "Commands",
                         value: Object.keys(info.commands).length,
+                        inline: true
+                    },
+                    {
+                        name: "Uptime",
+                        value: convertDate(now - info.start),
                         inline: true
                     },
                     {
