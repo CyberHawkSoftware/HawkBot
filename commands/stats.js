@@ -42,7 +42,7 @@ module.exports = function command(bot, info)
                 bot.sendMessage({
                 to: details.channelID,
                 embed: {
-                    title: 'HawkBot Stats',
+                    title: "HawkBot's Stats",
                     description: '',
                     footer: {
                         text: "Created by CyberRonin#5517"
@@ -50,7 +50,12 @@ module.exports = function command(bot, info)
                     thumbnail: {
                         url: "https://cdn.discordapp.com/avatars/193403332046487552/cc2379129ee5450d617a1170a468e4f9.jpg"
                     },
-                    fields:[
+                    fields:[/*
+                    {
+                        name: "HawkBot's Stats",
+                        value: "",
+                        inline: false  
+                    },*/
                     {
                         name: "Servers",
                         value: Object.keys(bot.servers).length,
