@@ -65,7 +65,7 @@ module.exports = function command(bot, info)
             for(let i = 0; i < arr.length; i ++)
             {
               str += `${i+1}. ${arr[i].title}`;
-              if(arr[i].alternate_title != null)
+              if(arr[i].alternate_title != null && arr[i].alternate_title != "")
               {
                 str += ` (${arr[i].alternate_title})\n`;
               }
@@ -79,6 +79,7 @@ module.exports = function command(bot, info)
 
           const getInfo = function(body, n)
           {
+            const maxLength = 1020;
             //main embed
             let emb = {};
             emb.title = body[n].title;
@@ -126,7 +127,14 @@ module.exports = function command(bot, info)
             }
             else
             {
-              synopsis.value = body[n].synopsis;
+              if(body[n].synopsis.length > 1020)
+              {
+                synopsis.value = `${body[n].synopsis.slice(0, maxLength - 6)} [...]`;
+              }
+              else
+              {
+                synopsis.value = body[n].synopsis;
+              }
             }
             fields.push(synopsis);
             //Rating
