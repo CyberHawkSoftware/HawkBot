@@ -8,7 +8,7 @@ module.exports = function command(bot, info)
         //the alias can be set by putting what you'd like in that array
         alias: ['an'],
         //description that shows up in the help menu
-        description: "[<anime>, <anime> --list, <anime> <number from --list> Looks up an anime from Hummingbird.me, you may use anime <anime> -- list to get a list of animes returned by the search. Then use anime <anime> <number> to get that anime info to display.]",
+        description: "[<anime>, <anime> --list, <anime> --<number from --list> Looks up an anime from Hummingbird.me, you may use anime <anime> -- list to get a list of animes returned by the search. Then use anime <anime> --<number> to get that anime info to display.]",
         //set the permissions [public, elevated, mod, private]
         permissions: "public",
         action: function(details)
@@ -115,6 +115,13 @@ module.exports = function command(bot, info)
               eps.value = body[n].episode_count;
             }
             fields.push(eps);
+            //ep runtime
+            let epRun = {name: "Episode Runtime:", inline: true};
+            if(body[n].episode_length!= null)
+            {
+              epRun.value = `${body[n].episode_length}m`;
+              fields.push(epRun);
+            }
             //genre
             let genre = {name: "Genre:", inline: true};
             genre.value = concatArr(body[n].genres);
@@ -173,7 +180,7 @@ module.exports = function command(bot, info)
                 listAnime(details.input.replace(" --list", ''));
                 return;
             }
-            else if(details.input.search(/^.+\s[1-9][0-9]*$/g) != -1)
+            else if(details.input.search(/^.+\s--[1-9][0-9]*$/g) != -1)
             {
                 let patt = /[1-9][0-9]*$/g;
                 let num = parseInt(patt.exec(details.input),10);
