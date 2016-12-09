@@ -55,7 +55,7 @@ module.exports = function command(bot, info)
           {
             let emb = {};
             emb.title = "List Results";
-            emb.description = getNames(body);
+            emb.description = "Add --<number> where the number is on this list. e.g (--1 for the first, etc) to the original search.\n\n" +  getNames(body);
             return emb;
           }
 
