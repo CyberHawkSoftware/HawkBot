@@ -80,12 +80,21 @@ module.exports = function command(bot, info)
           const getInfo = function(body, n)
           {
             const maxLength = 1020;
+            let tv = true;
+            if(body[n].show_type == "Movie")
+            {
+              tv = false;
+            }
             //main embed
             let emb = {};
             emb.title = body[n].title;
             if(body[n].alternate_title)
             {
               emb.description = body[n].alternate_title;
+            }
+            else
+            {
+              emb.description = "\n _ _"
             }
             emb.url = body[n].url;
             //thumbnail
@@ -97,30 +106,58 @@ module.exports = function command(bot, info)
             let airDates = {name: "Air Date(s):", inline: true};
             if(body[n].started_airing != null)
             {
-              airDates.value = `Start: ${body[n].started_airing}`;
+              if(!tv)
+              {
+                airDates.value = `Aired: ${body[n].started_airing}`
+              }
+              else
+              {
+                airDates.value = `Start: ${body[n].started_airing}`;
+              }
+              
             }
             if(body[n].finished_airing != null)
             {
-              airDates.value += `\nFinish: ${body[n].finished_airing}`;
+              if(tv)
+              {
+                airDates.value += `\nFinish: ${body[n].finished_airing}`;
+              }      
             }
-            fields.push(airDates);
+            if(body[n].finished_airing != null && body[n].started_airing != null)
+            {
+              fields.push(airDates);
+            }
+            
             //Episodes
             let eps = {name: "Episodes:", inline:true};
             if(body[n].episode_count == null)
             {
-              eps.value = "Not known yet."
+              eps.value = "Unknown."
             }
             else
             {
               eps.value = body[n].episode_count;
             }
-            fields.push(eps);
+            if(tv)
+            {
+              fields.push(eps);
+            }        
             //ep runtime
             let epRun = {name: "Episode Runtime:", inline: true};
+            if(!tv)
+            {
+              epRun.name = "Movie Runtime:";
+            }
             if(body[n].episode_length!= null)
             {
               epRun.value = `${body[n].episode_length}m`;
               fields.push(epRun);
+            }
+            //age Rating
+            if(body[0].age_rating != null)
+            {
+              let age = {name: "Age Rating", value: body[0].age_rating, inline: true};
+              fields.push(age);
             }
             //genre
             let genre = {name: "Genre:", inline: true};
