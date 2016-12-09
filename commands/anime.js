@@ -80,6 +80,7 @@ module.exports = function command(bot, info)
           const getInfo = function(body, n)
           {
             const maxLength = 1020;
+            console.log(body);
             let tv = true;
             if(body[n].show_type == "Movie")
             {
