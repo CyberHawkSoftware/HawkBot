@@ -158,26 +158,40 @@ module.exports = function command(bot, info)
 
           //processes the command
           //to better understand this part, take a look at the parameters at the top of the page
-          if(details.input === "") {return;}
-          else if(details.input.search(/.+\s(--list)/g) != -1)
-          {
-              listAnime(details.input.replace(" --list", ''));
-              return;
+          try{
+            if(details.input === "") {return;}
+            else if(details.input.search(/.+\s(--list)/g) != -1)
+            {
+                listAnime(details.input.replace(" --list", ''));
+                return;
+            }
+            else if(details.input.search(/^.+\s[1-9][0-9]*$/g) != -1)
+            {
+                let patt = /[1-9][0-9]*$/g;
+                let num = parseInt(patt.exec(details.input),10);
+                console.log("Num is " + num + " details is " + details.input);
+                console.log("Searching for " + details.input.replace(/\s[1-9][0-9]*/g, ''));
+                searchAnime(details.input.replace(/\s[1-9][0-9]*/g, ''),num - 1);
+                return;
+            }
+            else
+            {
+                searchAnime(details.input, 0);
+                return;
+            }
           }
-          else if(details.input.search(/^.+\s[1-9][0-9]*$/g) != -1)
+          catch(err)
           {
-              let patt = /[1-9][0-9]*$/g;
-              let num = parseInt(patt.exec(details.input),10);
-              console.log("Num is " + num + " details is " + details.input);
-              console.log("Searching for " + details.input.replace(/\s[1-9][0-9]*/g, ''));
-              searchAnime(details.input.replace(/\s[1-9][0-9]*/g, ''),num - 1);
-              return;
+            bot.sendMessage({
+              to: details.channelID,
+              embed:{
+                title: "Error",
+                description: "Error occured, if you are using a number in a title try to put it in parenthesis. If the error continues, contact CyberRonin."
+              }
+            });
+            console.log(err);
           }
-          else
-          {
-              searchAnime(details.input, 0);
-              return;
-          }
+
         }
     };
 };
