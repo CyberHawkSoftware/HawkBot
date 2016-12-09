@@ -59,12 +59,21 @@ bot.on('message', function(user, userID, channelID, message, event) {
             {
                 details.serverID = utility.getServerID(details.channelID);
                 //does the message sender have elevated priveleges?
-                details.isMod = utility.checkModPerm(details.userID, details.serverID);
-                if(!details.isMod)
-                {
-                    //if sender is not a mod, check to see if they are elevated
-                    details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
+                try{
+                    details.isMod = utility.checkModPerm(details.userID, details.serverID);
+                    if(!details.isMod)
+                    {
+                        //if sender is not a mod, check to see if they are elevated
+                        details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
+                    }
                 }
+                catch(err)
+                {
+                  console.log(err);
+                  details.isMod = false;
+                  details.isElevated = false;
+                }
+
             }
             details.serverID = utility.getServerID(details.channelID);
         }
