@@ -6,7 +6,7 @@ module.exports = function command(bot, info)
     "use strict";
     return {
         //the alias can be set by putting what you'd like in that array
-        alias: ['p'],
+        alias: ['wp'],
         //description that shows up in the help menu
         description: "(Gets random pictures)",
         //set the permissions [public, elevated, mod, private]
