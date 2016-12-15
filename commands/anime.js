@@ -18,16 +18,17 @@ module.exports = function command(bot, info)
             //do something here
             const request = require("request");
             const urlencode = require("urlencode");
-            var url = "https://hummingbird.me/api/v1/search/anime/?query=";
+            var url = "https://kitsu.io/api/edge/anime?filter[text]=";
 
             url += urlencode(w);
-            request({url: url, json: true}, function(error, response, body)
+            request({url: url, json: false}, function(error, response, body)
             {
               if(!error && response.statusCode === 200)
               {
+                let animeResponse = JSON.parse(body);
                 bot.sendMessage({
                   to: details.channelID,
-                  embed: getInfo(body,n)
+                  embed: getInfo(animeResponse.data,n)
                 });
               }
             });
@@ -37,16 +38,17 @@ module.exports = function command(bot, info)
           {
             const request = require("request");
             const urlencode = require("urlencode");
-            var url = "https://hummingbird.me/api/v1/search/anime/?query=";
+            var url = "https://kitsu.io/api/edge/anime?filter[text]=";
 
             url += urlencode(w);
-            request({url: url, json: true}, function(error, response, body)
+            request({url: url, json: false}, function(error, response, body)
             {
               if(!error && response.statusCode === 200)
               {
+                let animeResponse = JSON.parse(body);
                 bot.sendMessage({
                   to: details.channelID,
-                  embed: getList(body)
+                  embed: getList(animeResponse)
                 });
               }
             });
@@ -55,7 +57,7 @@ module.exports = function command(bot, info)
           {
             let emb = {};
             emb.title = "List Results";
-            emb.description = "Add --<number> where the number is on this list. e.g (--1 for the first, etc) to the original search.\n\n" +  getNames(body);
+            emb.description = "Add --<number> where the number is on this list. e.g (--1 for the first, etc) to the original search.\n\n" +  getNames(body.data);
             return emb;
           }
 
@@ -64,10 +66,10 @@ module.exports = function command(bot, info)
             let str = "";
             for(let i = 0; i < arr.length; i ++)
             {
-              str += `${i+1}. ${arr[i].title}`;
-              if(arr[i].alternate_title != null && arr[i].alternate_title != "")
+              str += `${i+1}. ${arr[i].attributes.titles.en_jp}`;
+              if(arr[i].attributes.titles.ja_jp != null && arr[i].attributes.titles.ja_jp != "")
               {
-                str += ` (${arr[i].alternate_title})\n`;
+                str += ` (${arr[i].attributes.titles.ja_jp})\n`;
               }
               else
               {
@@ -80,64 +82,64 @@ module.exports = function command(bot, info)
           const getInfo = function(body, n)
           {
             const maxLength = 1020;
-            console.log(body);
+            //console.log(body);
             let tv = true;
-            if(body[n].show_type == "Movie")
+            if(body[n].attributes.showType == "Movie")
             {
               tv = false;
             }
             //main embed
             let emb = {};
-            emb.title = body[n].title;
-            if(body[n].alternate_title)
+            emb.title = body[n].attributes.titles.en_jp;
+            if(body[n].attributes.titles.ja_jp)
             {
-              emb.description = body[n].alternate_title;
+              emb.description = body[n].attributes.titles.ja_jp;
             }
             else
             {
               emb.description = "\n _ _"
             }
-            emb.url = body[n].url;
+            emb.url = `https://kitsu.io/anime/${body[n].attributes.slug}`;
             //thumbnail
             let thumb = {};
-            thumb.url = body[n].cover_image;
+            thumb.url = body[n].attributes.posterImage.medium;
             //fields embeds
             let fields = [];
             //Air Dates
             let airDates = {name: "Air Date(s):", inline: true};
-            if(body[n].started_airing != null)
+            if(body[n].attributes.startDate != null)
             {
               if(!tv)
               {
-                airDates.value = `Aired: ${body[n].started_airing}`
+                airDates.value = `Aired: ${body[n].attributes.startDate}`
               }
               else
               {
-                airDates.value = `Start: ${body[n].started_airing}`;
+                airDates.value = `Start: ${body[n].attributes.startDate}`;
               }
               
             }
-            if(body[n].finished_airing != null)
+            if(body[n].attributes.endDate != null)
             {
               if(tv)
               {
-                airDates.value += `\nFinish: ${body[n].finished_airing}`;
+                airDates.value += `\nFinish: ${body[n].attributes.endDate}`;
               }      
             }
-            if(body[n].finished_airing != null && body[n].started_airing != null)
+            if(body[n].attributes.endDate != null || body[n].attributes.startDate != null)
             {
               fields.push(airDates);
             }
             
             //Episodes
             let eps = {name: "Episodes:", inline:true};
-            if(body[n].episode_count == null)
+            if(body[n].attributes.episodeCount == null)
             {
               eps.value = "Unknown."
             }
             else
             {
-              eps.value = body[n].episode_count;
+              eps.value = body[n].attributes.episodeCount;
             }
             if(tv)
             {
@@ -149,36 +151,37 @@ module.exports = function command(bot, info)
             {
               epRun.name = "Movie Runtime:";
             }
-            if(body[n].episode_length!= null)
+            if(body[n].attributes.episodeLength!= null)
             {
-              epRun.value = `${body[n].episode_length}m`;
+              epRun.value = `${body[n].attributes.episodeLength}m`;
               fields.push(epRun);
             }
             //age Rating
-            if(body[0].age_rating != null)
+            if(body[n].attributes.ageRating != null)
             {
-              let age = {name: "Age Rating", value: body[0].age_rating, inline: true};
+              let age = {name: "Age Rating", value: body[n].attributes.ageRating, inline: true};
               fields.push(age);
             }
-            //genre
-            let genre = {name: "Genre:", inline: true};
-            genre.value = concatArr(body[n].genres);
-            fields.push(genre);
+            if(body[n].attributes.youtubeVideoId != "" && body[n].attributes.youtubeVideoId != null)
+            {
+              let youtube = {name: "Trailer Link", value: `https://www.youtube.com/watch?v${body[n].attributes.youtubeVideoId}`, inline: true};
+              fields.push(youtube);
+            }
             //synopsis
             let synopsis = {name: "Synopsis:", inline: false};
-            if(body[n].synopsis == "")
+            if(body[n].attributes.synopsis == "")
             {
               synopsis.value = "No synopsis yet :frowning:";
             }
             else
             {
-              if(body[n].synopsis.length > 1020)
+              if(body[n].attributes.synopsis.length > 1020)
               {
-                synopsis.value = `${body[n].synopsis.slice(0, maxLength - 6)} [...]`;
+                synopsis.value = `${body[n].attributes.synopsis.slice(0, maxLength - 6)} [...]`;
               }
               else
               {
-                synopsis.value = body[n].synopsis;
+                synopsis.value = body[n].attributes.synopsis;
               }
             }
             fields.push(synopsis);
