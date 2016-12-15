@@ -26,10 +26,25 @@ module.exports = function command(bot, info)
               if(!error && response.statusCode === 200)
               {
                 let animeResponse = JSON.parse(body);
-                bot.sendMessage({
-                  to: details.channelID,
-                  embed: getInfo(animeResponse.data,n)
-                });
+                //console.log(body);
+                if(animeResponse.data.length != 0)
+                {
+                  bot.sendMessage({
+                    to: details.channelID,
+                    embed: getInfo(animeResponse.data,n)
+                  });
+                }
+                else
+                {
+                  bot.sendMessage({
+                    to: details.channelID,
+                    embed: {
+                      title: 'Error',
+                      description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
+                    }
+                  });
+                }
+
               }
             });
           }
@@ -46,10 +61,24 @@ module.exports = function command(bot, info)
               if(!error && response.statusCode === 200)
               {
                 let animeResponse = JSON.parse(body);
-                bot.sendMessage({
-                  to: details.channelID,
-                  embed: getList(animeResponse)
-                });
+                if(animeResponse.data.length != 0)
+                {
+                  bot.sendMessage({
+                    to: details.channelID,
+                    embed: getList(animeResponse)
+                  });
+                }
+                else
+                {
+                  bot.sendMessage({
+                    to: details.channelID,
+                    embed: {
+                      title: 'Error',
+                      description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
+                    }
+                  });
+                }
+
               }
             });
           }
