@@ -164,7 +164,7 @@ module.exports = function command(bot, info)
             }
             if(body[n].attributes.youtubeVideoId != "" && body[n].attributes.youtubeVideoId != null)
             {
-              let youtube = {name: "Trailer Link", value: `https://www.youtube.com/watch?v${body[n].attributes.youtubeVideoId}`, inline: true};
+              let youtube = {name: "Trailer Link", value: `https://www.youtube.com/watch?v=${body[n].attributes.youtubeVideoId}`, inline: true};
               fields.push(youtube);
             }
             //synopsis
