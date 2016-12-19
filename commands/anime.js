@@ -5,6 +5,7 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        inline: false,
         //the alias can be set by putting what you'd like in that array
         alias: ['an'],
         //description that shows up in the help menu
@@ -86,7 +87,10 @@ module.exports = function command(bot, info)
           {
             let emb = {};
             emb.title = "List Results";
-            emb.description = "Add --<number> where the number is on this list. e.g (--1 for the first, etc) to the original search.\n\n" +  getNames(body.data);
+            emb.description = "Add --<number> where the number is on this list. e.g (--1 for the first, etc) to the original search.\n\n" +  getNames(body.data) + "\n _ _";
+            emb.footer = { text: "Results provided by Kitsu.io", icon_url: "http://www.cyberhawk.co/kitsu.png"};
+            emb.thumbnail = {url:"http://www.cyberhawk.co/kitsu.png" };
+            emb.color = 0xf75239;
             return emb;
           }
 
@@ -110,7 +114,7 @@ module.exports = function command(bot, info)
 
           const getInfo = function(body, n)
           {
-            const maxLength = 1020;
+            const maxLength = 1014;
             //console.log(body);
             let tv = true;
             if(body[n].attributes.showType == "Movie")
@@ -204,19 +208,21 @@ module.exports = function command(bot, info)
             }
             else
             {
-              if(body[n].attributes.synopsis.length > 1020)
+              if(body[n].attributes.synopsis.length > 1014)
               {
-                synopsis.value = `${body[n].attributes.synopsis.slice(0, maxLength - 6)} [...]`;
+                synopsis.value = `${body[n].attributes.synopsis.slice(0, maxLength - 6)} [...]\n _ _`;
               }
               else
               {
-                synopsis.value = body[n].attributes.synopsis;
+                synopsis.value = body[n].attributes.synopsis + "\n _ _";
               }
             }
             fields.push(synopsis);
             //Rating
             emb.thumbnail = thumb;
             emb.fields = fields;
+            emb.footer = { text: "Results provided by Kitsu.io", icon_url: "http://www.cyberhawk.co/kitsu.png"};
+            emb.color = 0xf75239;
             return emb;
           }
 

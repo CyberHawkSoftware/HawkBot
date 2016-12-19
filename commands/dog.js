@@ -5,8 +5,9 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        inline: true,
         //the alias can be set by putting what you'd like in that array
-        alias: ['d'],
+        alias: ['d', 'inu', '犬'],
         //description that shows up in the help menu
         description: "(Gets random dog pictures)",
         //set the permissions [public, elevated, mod, private]

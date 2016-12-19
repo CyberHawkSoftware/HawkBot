@@ -1,0 +1,5 @@
+Error occured: Error Code 1001 - attempting to login Thu Dec 15 2016 17:37:58 GMT-0500 (Eastern Standard Time)
+Error occured: Error Code 1006 - attempting to login Thu Dec 15 2016 21:40:32 GMT-0500 (Eastern Standard Time)
+Error occured: Error Code 1006 - attempting to login Fri Dec 16 2016 06:15:24 GMT-0500 (Eastern Standard Time)
+Error occured: Error Code 1006 - attempting to login Fri Dec 16 2016 07:42:58 GMT-0500 (Eastern Standard Time)
+Error occured: Error Code 1001 - attempting to login Mon Dec 19 2016 11:46:01 GMT-0500 (Eastern Standard Time)

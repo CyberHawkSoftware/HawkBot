@@ -3,6 +3,7 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        inline: true,
         alias: ['k'],
         description: "(Kills the bot)",
         permissions: "private",

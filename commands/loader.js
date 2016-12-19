@@ -34,24 +34,50 @@ module.exports = function commandLoad(bot,info)
 
     commands['help'] = 
     {
+        inline: true,
         alias: ['?'],
         description: "(Shows help menu)",
         permissions: "public",
         action: function(details)
-        {
-            let lines = "Help Menu:\n"
-            const wrap = "```md\n%content```";
+        {    
+            //concatenates an array to one line
+            const concatArr = function(arr)
+            {
+                    "use strict";
+                    let s = "";
+                    for(let i = 0; i < arr.length; i++)
+                    {
+                        if(arr[i] != null)
+                        {
+                            if(i == (arr.length - 1))
+                            {
+                                s += config.prefix + arr[i];
+                            }
+                            else
+                            {
+                                s += config.prefix + arr[i] + ", ";
+                            }
+                        }
+                    }
+                return s;
+            }
+
+            let lines = [];
             const filter = function(filterArr,key)
             {
-                const aliases = [];
+
                 let aliasStr = "";
+                let field = {};
                 if(utility.searchArr(filterArr,commands[key]['permissions']))
                 {
                     if(typeof commands[key]['alias'] === "object")
                     {
-                        aliasStr += " " + config.prefix + commands[key]['alias'][0];
+                        aliasStr= " " + concatArr(commands[key]['alias']);
                     }
-                    return "\n[" + config.prefix + key + aliasStr + "]" + commands[key]['description'];
+                    field.name = config.prefix + key + ", " + aliasStr;
+                    field.value = commands[key]['description'];
+                    field.inline = commands[key].inline;
+                    return field;
                 }
                 else
                 {
@@ -75,14 +101,17 @@ module.exports = function commandLoad(bot,info)
             {
                 filterArr = ["public"]
             }
-            Object.keys(commands).forEach(function(key){ 
-                lines += filter(filterArr,key);;             
+            Object.keys(commands).forEach(function(key)
+            { 
+                lines.push(filter(filterArr,key));             
             });
-            lines += '\n#Example: ' + config.prefix + 'jisho song counter --list';
-            lines = wrap.replace("%content",lines);
             bot.sendMessage({
                 to: details.channelID,
-                message: lines
+                embed: {
+                    title: 'Help',
+                    description: 'You can PM the bot :heart:',
+                    fields: lines
+                } 
             });
         }
     }
