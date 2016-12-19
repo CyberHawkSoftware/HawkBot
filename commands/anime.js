@@ -127,6 +127,10 @@ module.exports = function command(bot, info)
             {
               emb.title = body[n].attributes.titles.en
               emb.description = body[n].attributes.titles.en_jp
+              if(body[n].attributes.titles.ja_jp)
+              {
+                emb.description += '\n' + body[n].attributes.titles.ja_jp;
+              }
             }
             else
             {
