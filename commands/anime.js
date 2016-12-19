@@ -123,14 +123,22 @@ module.exports = function command(bot, info)
             }
             //main embed
             let emb = {};
-            emb.title = body[n].attributes.titles.en_jp;
-            if(body[n].attributes.titles.ja_jp)
+            if(body[n].attributes.titles.en != null && body[n].attributes.titles.en != "")
             {
-              emb.description = body[n].attributes.titles.ja_jp;
+              emb.title = body[n].attributes.titles.en
+              emb.description = body[n].attributes.titles.en_jp
             }
             else
             {
-              emb.description = "\n _ _"
+              emb.title = body[n].attributes.titles.en_jp;
+              if(body[n].attributes.titles.ja_jp)
+              {
+                emb.description = body[n].attributes.titles.ja_jp;
+              }
+              else
+              {
+                emb.description = "\n _ _"
+              }
             }
             emb.url = `https://kitsu.io/anime/${body[n].attributes.slug}`;
             //thumbnail

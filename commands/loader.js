@@ -81,7 +81,7 @@ module.exports = function commandLoad(bot,info)
                 }
                 else
                 {
-                    return "";
+                    return false;
                 }
             }
             let filterArr =[];
@@ -101,18 +101,29 @@ module.exports = function commandLoad(bot,info)
             {
                 filterArr = ["public"]
             }
+            let count = 0;
             Object.keys(commands).forEach(function(key)
             { 
-                lines.push(filter(filterArr,key));             
+                let filtered = filter(filterArr,key);
+                if(filtered != false)
+                {
+                    lines.push(filtered);
+                }
+                
+                count ++;
+                if(count == Object.keys(commands).length)
+                {
+                    bot.sendMessage({
+                        to: details.channelID,
+                        embed: {
+                            title: 'Help',
+                            description: 'You can PM the bot :heart:',
+                            fields: lines
+                        } 
+                    });
+                }
             });
-            bot.sendMessage({
-                to: details.channelID,
-                embed: {
-                    title: 'Help',
-                    description: 'You can PM the bot :heart:',
-                    fields: lines
-                } 
-            });
+
         }
     }
 
