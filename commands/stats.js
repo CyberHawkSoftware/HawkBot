@@ -40,6 +40,15 @@ module.exports = function command(bot, info)
                     }
                     return str;
                 }
+                const countUsers = function()
+                {
+                    let num = 0;
+                    Object.keys(bot.servers).forEach(function(key)
+                    {
+                        num += bot.servers[key].member_count;
+                    });
+                    return num;
+                }
                 bot.sendMessage({
                 to: details.channelID,
                 embed: {
@@ -69,7 +78,7 @@ module.exports = function command(bot, info)
                     },
                     {
                         name: "Users",
-                        value: Object.keys(bot.users).length,
+                        value: countUsers(),
                         inline: true
                     },
                     {
@@ -83,8 +92,13 @@ module.exports = function command(bot, info)
                         inline: true
                     },
                     {
+                        name: "Discord Server",
+                        value: "https://discord.gg/jDpR9PD",
+                        inline: true
+                    },
+                    {
                         name: "About",
-                        value: "Primary purpose is to serve as a Jisho lookup, but there are fun commands as well. The beta and master branches have a DJ implementation."
+                        value: "Primary purpose is to serve as a Jisho & anime lookup, but there are fun commands as well. The beta and master branches have a DJ implementation."
                     },
                     {
                         name: "Github",
