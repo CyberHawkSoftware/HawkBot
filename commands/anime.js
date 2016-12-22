@@ -9,7 +9,7 @@ module.exports = function command(bot, info)
         //the alias can be set by putting what you'd like in that array
         alias: ['an'],
         //description that shows up in the help menu
-        description: "[<anime>, <anime> --list, <anime> --<number from --list> Looks up an anime from Hummingbird.me, you may use anime <anime> -- list to get a list of animes returned by the search. Then use anime <anime> --<number> to get that anime info to display.]",
+        description: "[<anime>, <anime> --list, <anime> --<number from --list> Looks up an anime from Kitsu.io, you may use anime <anime> -- list to get a list of animes returned by the search. Then use anime <anime> --<number> to get that anime info to display.]",
         //set the permissions [public, elevated, mod, private]
         permissions: "public",
         action: function(details)
