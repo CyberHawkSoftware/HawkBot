@@ -129,8 +129,11 @@ module.exports = function command(bot, info)
               return emb;
             }
             let fields = [];
-            let thumb = {url:body[n].volumeInfo.imageLinks.thumbnail}
-            
+            if(body[n].volumeInfo.imageLinks != undefined)
+            {
+              let thumb = {url:body[n].volumeInfo.imageLinks.thumbnail};
+              emb.thumbnail = thumb;
+            }
             //Title
             emb.title = body[n].volumeInfo.title;
             if(body[n].volumeInfo.subtitle != undefined)
@@ -148,20 +151,34 @@ module.exports = function command(bot, info)
             fields.push(published);
             //identifiers
             let ident = {name: "Identifiers", inline: false};
-            ident.value = concatIdentifiers(body[n].volumeInfo.industryIdentifiers);
-            fields.push(ident);
-            //description
-            let desc = {name: "Description", inline: false};
-            if(body[n].volumeInfo.description.length > 1014)
+            if(body[n].volumeInfo.industryIdentifiers != undefined)
             {
-              desc.value = `${body[n].volumeInfo.description.slice(0, maxLength - 6)} [...]\n _ _`;
+              ident.value = concatIdentifiers(body[n].volumeInfo.industryIdentifiers);
             }
             else
             {
-              desc.value = body[n].volumeInfo.description + "\n _ _";
+              ident.value = "None provided."
             }
+            fields.push(ident);
+            //description
+            let desc = {name: "Description", inline: false};
+            if(body[n].volumeInfo.description != undefined)
+            {
+              if(body[n].volumeInfo.description.length > 1014)
+              {
+                desc.value = `${body[n].volumeInfo.description.slice(0, maxLength - 6)} [...]\n _ _`;
+              }
+              else
+              {
+                desc.value = body[n].volumeInfo.description + "\n _ _";
+              }
+            }
+            else
+            {
+              desc.value = "No description provided\n _ _";
+            }
+
             fields.push(desc);
-            emb.thumbnail = thumb;
             emb.fields = fields;
             emb.footer = { text: "Results provided by Google"};
             //emb.color = 0xf75239;
@@ -220,7 +237,7 @@ module.exports = function command(bot, info)
             {
                 let patt = /[1-9][0-9]*$/g;
                 let num = parseInt(patt.exec(details.input),10);
-                searchBook(details.input.replace(/\s[1-9][0-9]*/g, ''),num - 1);
+                searchBook(details.input.replace(/\s--[1-9][0-9]*/g, ''),num - 1);
                 return;
             }
             else
