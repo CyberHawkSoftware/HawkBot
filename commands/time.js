@@ -31,13 +31,36 @@ module.exports = function command(bot, info)
             }
             return undefined;
           }
-          const getZones = function()
+          const getZones = function(page)
           {
-            let s = ""
+            let p1 = "";
+            let p2 = "";
+            let arr = Object.keys(info.time);
+            for(let i = 0; i < arr.length; i ++)
+            {
+              if(i < arr.length/2)
+              {
+                p1 += `${arr[i]}: ${info.time[arr[i]].text}\n`;
+              }
+              else
+              {
+                p2 += `${arr[i]}: ${info.time[arr[i]].text}\n`;
+              }
+            }
+            if(page == "1")
+            {
+              return p1;
+            }
+            else
+            {
+              return p2;
+            }
+            /*
             Object.keys(info.time).forEach((key) =>
             {
-              s += `${key}: ${info.time[key].value}\n`;
-            });
+              s += `${key}\n`//: ${info.time[key].value}\n`;
+            });*/
+
             return s;
           }
           if(details.input === "")
@@ -62,13 +85,31 @@ module.exports = function command(bot, info)
               //console.log("Searching for " + details.input.replace(/\s[1-9][0-9]*/g, ''));
               if(details.args[1] === "--list")
               {
-                bot.sendMessage({
+                console.log('getting it');
+                if(details.args[2] != undefined)
+                {
+                  if(details.args[2] == "2")
+                  bot.sendMessage({
                   to: details.channelID,
                   embed: {
                     title: 'Time Zone List',
-                    description: getZones()
+                    description: getZones(2),
+                    footer: {text: "Page 2"}
                   }
                 });
+                }
+                else
+                {
+                  bot.sendMessage({
+                    to: details.channelID,
+                    embed: {
+                      title: 'Time Zone List',
+                      description: getZones(1),
+                      footer: {text: `Page 1: ${info.config.prefix}time --list 2 for Page 2`}
+                    }
+                  });
+                }
+
                 return;
               }
               let t = getTime(details.args[1].toUpperCase());
