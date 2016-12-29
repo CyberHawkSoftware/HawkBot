@@ -13,6 +13,8 @@ const bot = new discord.Client({token: info.config.api.discord_token, autorun: t
 info.utility = require('./lib/utility.js')(bot, info);
 info.commands = require('./commands/loader.js')(bot,info);
 info.rules = info.utility.codeBlock(rules,"md");
+//added time json
+info.time = require('./tz-pretty.json');
 info.manualKill = false;
 const utility = info.utility;
 const config = info.config;

@@ -1,0 +1,446 @@
+{
+    "A": {
+        "value": "Alpha Time Zone",
+        "location": "Military",
+        "offset": 1,
+        "text": "(UTC +1) Alpha Time Zone"
+    },
+    "ACDT":{
+        "value": "Australian Central Daylight Time",
+        "location": "Australia",
+        "offset": 10.5,
+        "text": "(UTC +10:30) Australian Central Daylight Time"
+    },
+    "ACST":{
+        "value": "Australian Central Standard Time",
+        "location": "Australia",
+        "offset": 9.5,
+        "text": "(UTC +9:30) Australian Central Daylight Time"
+    },
+    "ACT":{
+        "value": "Acre Time",
+        "location": "South America",
+        "offset": -5,
+        "text": "(UTC -5) Acre Time"
+    },
+    "ACWST":{
+        "value": "Australian Central Western Standard Time",
+        "location": "Australia",
+        "offset": 8.75,
+        "text": "(UTC +8:45) Australian Central Western Standard Time"
+    },
+    "ADT":{
+        "value": "Atlantic Daylight Time",
+        "location": "North America Atlantic",
+        "offset": -3,
+        "text": "(UTC -3) Atlantic Daylight Time"
+    },
+    "AEDT":{
+        "value": "Australian Eastern Daylight Time",
+        "location": "Australia",
+        "offset": 11,
+        "text": "(UTC +11) Australian Eastern Daylight Time"
+    },
+    "AEST":{
+        "value": "Australian Eastern Standard Time",
+        "location": "Australia",
+        "offset": 10,
+        "text": "(UTC +10) Australian Eastern Standard Time"
+    },
+    "AFT":{
+        "value": "Afghanistan Time",
+        "location": "Asia",
+        "offset": 4.5,
+        "text": "(UTC +4:30) Afghanistan Time"
+    },
+    "AKDT":{
+        "value": "Alaska Daylight Time",
+        "location": "North America",
+        "offset": -8,
+        "text": "(UTC -8) Alaska Daylight Time"
+    },
+    "AKST":{
+        "value": "Alaska Standard Time",
+        "location": "North America",
+        "offset": -9,
+        "text": "(UTC -9) Alaska Standard Time"
+    },
+    "ALMT":{
+        "value": "Alma-Ata Time",
+        "location": "Asia",
+        "offset": 6,
+        "text": "(UTC +6) Alma-Ata Time"
+    },
+    "AMST":{
+        "value": "Amenia Summer Time",
+        "location": "Asia",
+        "offset": 5,
+        "text": "(UTC +5) Amenia Summer Time"
+    },
+    "AMT":{
+        "value": "Amenia Time",
+        "location": "Asia",
+        "offset": 4,
+        "text": "(UTC +4) Amenia Time"
+    },
+    "ANAST":{
+        "value": "Anadyr Summer Time",
+        "location": "Asia",
+        "offset": 12,
+        "text": "(UTC +12) Anadyr Summer Time"
+    },
+    "ANAT":{
+        "value": "Anadyr Time",
+        "location": "Asia",
+        "offset": 12,
+        "text": "(UTC +12) Anadyr Time"
+    },
+    "ART":{
+        "value": "Argentina Time",
+        "location": "Antartica, South America",
+        "offset": -3,
+        "text": "(UTC -3) Argentina Time"
+    },
+    "AST":{
+        "value": "Atlantic Standard Time",
+        "location": "North America, Atlantic, Caribbean",
+        "offset": -4,
+        "text": "(UTC -4) Atlantic Standard Time"
+    },
+    "AWDT":{
+        "value": "Australian Western Daylight Time",
+        "location": "Australia",
+        "offset": 9,
+        "text": "(UTC +9) Australian Western Daylight Time"
+    },
+    "AWST":{
+        "value": "Australian Western Standard Time",
+        "location": "Australia",
+        "offset": 8,
+        "text": "(UTC +8) Australian Western Standard Time"
+    },
+    "BST":{
+        "value": "British Summer Time",
+        "location": "Europe",
+        "offset": 1,
+        "text": "(UTC +1) British Summer Time"
+    },
+    "CAT":{
+        "value": "Central Africa Time",
+        "location": "Africa",
+        "offset": 2,
+        "text": "(UTC +2) Central Africa Time"
+    },
+    "CDT":{
+        "value": "Central Daylight Time",
+        "location": "North America",
+        "offset": -5,
+        "text": "(UTC -5) Central Daylight Time"
+    },
+    "CEST":{
+        "value": "Central European Summer Time",
+        "location": "Europe, Antartica",
+        "offset": 2,
+        "text": "(UTC +2) Central European Summer Time"
+    },
+    "CET":{
+        "value": "Central European Time",
+        "location": "Europe, Africa, Antartica",
+        "offset": 1,
+        "text": "(UTC +1) Australian Western Daylight Time"
+    },
+    "CIDST":{
+        "value": "Cayman Islands Daylight Saving Time",
+        "location": "Caribbean",
+        "offset": -4,
+        "text": "(UTC -4) Cayman Islands Daylight Saving Time"
+    },
+    "CIST":{
+        "value": "Cayman Islands Standard Time",
+        "location": "Caribbean",
+        "offset": -5,
+        "text": "(UTC -5) Cayman Islands Standard Time"
+    },
+    "CLST":{
+        "value": "Chile Summer Time",
+        "location": "South America, Antartica",
+        "offset": -3,
+        "text": "(UTC -3) Chile Summer Time"
+    },
+    "CLT":{
+        "value": "Chile Standard Time",
+        "location": "South America, Antartica",
+        "offset": -4,
+        "text": "(UTC -4) Chile Standard Time"
+    },
+    "NACST":{
+        "value": "Central Standard Time",
+        "location": "North America, Central America",
+        "offset": -6,
+        "text": "(UTC -6) Central Standard Time"
+    },
+    "CST":{
+        "value": "China Standard Time",
+        "location": "Asia",
+        "offset": 8,
+        "text": "(UTC +8) China Standard Time"
+    },
+    "EAT":{
+        "value": "Eastern Africa Time",
+        "location": "Africa, Indian Ocean",
+        "offset": 3,
+        "text": "(UTC +3) Eastern Africa Time"
+    },
+    "EDT":{
+        "value": "Eastern Daylight Time",
+        "location": "North America, Caribbean",
+        "offset": -4,
+        "text": "(UTC -4) Eastern Daylight Time"
+    },
+    "EEST":{
+        "value": "Eastern European Summer Time",
+        "location": "Europe, Asia",
+        "offset": 3,
+        "text": "(UTC +3) Eastern European Summer Time"
+    },
+    "EET":{
+        "value": "Eastern Europe Time",
+        "location": "Europe, Asia, Africa",
+        "offset": 2,
+        "text": "(UTC +2) Eastern Europe Time"
+    },
+    "EGST":{
+        "value": "Eastern Greenland Summer Time",
+        "location": "North America",
+        "offset": 0,
+        "text": "(UTC +0) Eastern Greenland Summer Time"
+    },
+    "EGT":{
+        "value": "Eastern Greenland Time",
+        "location": "North America",
+        "offset": 1,
+        "text": "(UTC +1) Eastern Greenland Time"
+    },
+    "EST":{
+        "value": "Eastern Standard Time",
+        "location": "North America, Caribbean, Central America",
+        "offset": -5,
+        "text": "(UTC -5) Eastern Standard Time"
+    },
+    "FET":{
+        "value": "Further-Eastern European Time",
+        "location": "Europe",
+        "offset": 3,
+        "text": "(UTC +3) Further-Eastern European Time"
+    },
+    "FJST":{
+        "value": "Fiji Summer Time",
+        "location": "Pacific",
+        "offset": 13,
+        "text": "(UTC +13) Fiji SUmmer Time"
+    },
+    "FJT":{
+        "value": "Fiji Time",
+        "location": "Pacific",
+        "offset": 12,
+        "text": "(UTC +12) Fiji Time"
+    },
+    "GALT":{
+        "value": "Galapagos Time",
+        "location": "Pacific",
+        "offset": -6,
+        "text": "(UTC -6) Galapagos Time"
+    },
+    "GET":{
+        "value": "Georgia Standard Time",
+        "location": "Asia",
+        "offset": 4,
+        "text": "(UTC +4) Georgia Standard Time"
+    },
+    "GST":{
+        "value": "Gulf Standard Time",
+        "location": "Asia",
+        "offset": 4,
+        "text": "(UTC +4) Gulf Standard Time"
+    },
+    "HADT":{
+        "value": "Hawaii-Aleutian Daylight Time",
+        "location": "North America",
+        "offset": -9,
+        "text": "(UTC -9) Hawaii-Aleutian Daylight Time"
+    },
+    "HAST":{
+        "value": "Hawaii-Aleutian Standard Time",
+        "location": "North America, Pacific",
+        "offset": -10,
+        "text": "(UTC -10) Hawaii-Aleutian Standard Time"
+    },
+    "HKT":{
+        "value": "Hong Kong Time",
+        "location": "Asia",
+        "offset": 8,
+        "text": "(UTC +8) Hong Kong Time"
+    },
+    "IRST":{
+        "value": "Iran Standard Time",
+        "location": "Asia",
+        "offset": 3.5,
+        "text": "(UTC +3:30) Iran Standard Time"
+    },
+    "JST":{
+        "value": "Japan Standard Time",
+        "location": "Asia",
+        "offset": 9,
+        "text": "(UTC +9) Japan Standard Time"
+    },
+    "KST":{
+        "value": "Korea Standard Time",
+        "location": "Asia",
+        "offset": 9,
+        "text": "(UTC +9) Korea Standard Time"
+    },
+    "MDT":{
+        "value": "Mountain Daylight Time",
+        "location": "North America",
+        "offset": -6,
+        "text": "(UTC -6) Mountain Daylight Time"
+    },
+    "MSD":{
+        "value": "Moscow Daylight Time",
+        "location": "Europe",
+        "offset": 4,
+        "text": "(UTC +4) Moscow Daylight Time"
+    },
+    "MSK":{
+        "value": "Moscow Standard Time",
+        "location": "Europe, Asia",
+        "offset": 3,
+        "text": "(UTC +3) Moscow Standard Time"
+    },
+    "MST":{
+        "value": "Mountain Standard Time",
+        "location": "North America",
+        "offset": -7,
+        "text": "(UTC -7) Mountain Standard Time"
+    },
+    "MYT":{
+        "value": "Malaysia Time",
+        "location": "Asia",
+        "offset": 8,
+        "text": "(UTC +8) Malaysia Time"
+    },
+    "NDT":{
+        "value": "Newfoundland Daylight Time",
+        "location": "Europe",
+        "offset": -2.5,
+        "text": "(UTC -2:30) Newfoundland Daylight Time"
+    },
+    "NFT":{
+        "value": "Norfolk Time",
+        "location": "Australia",
+        "offset": 11,
+        "text": "(UTC +11) Norfolk Time"
+    },
+    "NOVST":{
+        "value": "Novosibirsk Summer Time",
+        "location": "Asia",
+        "offset": 7,
+        "text": "(UTC +7) Novosibirsk Summer Time"
+    },
+    "NOVT":{
+        "value": "Novosibirsk Time",
+        "location": "Asia",
+        "offset": 7,
+        "text": "(UTC +7) Novosibirsk Time"
+    },
+    "NST":{
+        "value": "Newfoundland Standard Time",
+        "location": "Asia",
+        "offset": -3.5,
+        "text": "(UTC -3:30) Newfoundland Standard Time"
+    },
+    "NZDT":{
+        "value": "New Zealand Daylight Time",
+        "location": "Pacific, Antartica",
+        "offset": 13,
+        "text": "(UTC +13) New Zealand Daylight Time"
+    },
+    "NZST":{
+        "value": "New Zealand Standard Time",
+        "location": "Pacific, Antartica",
+        "offset": 12,
+        "text": "(UTC +12) New Zealand Standard Time"
+    },
+    "PDT":{
+        "value": "Pacific Daylight Time",
+        "location": "North America",
+        "offset": -7,
+        "text": "(UTC -7) Pacific Daylight Time"
+    },
+    "PET":{
+        "value": "Peru Time",
+        "location": "South America",
+        "offset": -5,
+        "text": "(UTC -5) Peru Time"
+    },
+    "PGT":{
+        "value": "Papua New Guinea Time",
+        "location": "Pacific",
+        "offset": 10,
+        "text": "(UTC +10) Papua New Guinea Time"
+    },
+    "PHT":{
+        "value": "Philippine Time",
+        "location": "Asia",
+        "offset": 8,
+        "text": "(UTC +8) Philippine Time"
+    },
+    "PST":{
+        "value": "Pacific Standard Time",
+        "location": "North America",
+        "offset": -8,
+        "text": "(UTC -8) Pacific Standard Time"
+    },
+    "PYT":{
+        "value": "Pyongyang Time",
+        "location": "Asia",
+        "offset": 8.5,
+        "text": "(UTC +8:30) Pyongyang Time"
+    },
+    "VET":{
+        "value": "Venezuelan Standard Time",
+        "location": "South America",
+        "offset": -4,
+        "text": "(UTC -4) Venezuelan Standard Time"
+    },
+    "WARST":{
+        "value": "Western Argentine Summer Time",
+        "location": "South America",
+        "offset": -3,
+        "text": "(UTC -3) Western Argentine Summer Time"
+    },
+    "WAST":{
+        "value": "West Africa Summer Time",
+        "location": "Africa",
+        "offset": 2,
+        "text": "(UTC +2) West Africa Summer Time"
+    },
+    "WAT":{
+        "value": "West Africa Time",
+        "location": "Africa",
+        "offset": 1,
+        "text": "(UTC +1) West Africa Time"
+    },
+    "WEST":{
+        "value": "Western European Summer Time",
+        "location": "Europe, Africa",
+        "offset": 1,
+        "text": "(UTC +1) Western European Summer Time"
+    },
+    "WET":{
+        "value": "Western European Time",
+        "location": "Europe, Africa",
+        "offset": 0,
+        "text": "(UTC +0) Western European Time"
+    }
+}

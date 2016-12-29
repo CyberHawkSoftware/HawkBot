@@ -143,7 +143,14 @@ module.exports = function command(bot, info)
             emb.description = "\n _ _";
             //authors
             let authors = {name: "Author(s)", inline: true};
-            authors.value = concatArr(body[n].volumeInfo.authors);
+            if(body[n].volumeInfo.authors != undefined)
+            {
+              authors.value = concatArr(body[n].volumeInfo.authors);
+            }
+            else
+            {
+              authors.value = "None provided.";
+            }
             fields.push(authors);
             //publish date
             let published = {name: "Published", inline: true};
