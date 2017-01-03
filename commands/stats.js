@@ -97,8 +97,19 @@ module.exports = function command(bot, info)
                         inline: true
                     },
                     {
+                        name: "Web Site",
+                        value: "http://hawkbot.cyberhawk.co",
+                        inline: true
+                    },
+                    {
+                        name: "Invite Link",
+                        value: "https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0",
+                        inline:false
+                    },
+                    {
                         name: "About",
-                        value: "Primary purpose is to serve as a Jisho & anime lookup, but there are fun commands as well. The beta and master branches have a DJ implementation."
+                        value: "Primary purpose is to serve as a Jisho & anime lookup, but there are fun commands as well. The beta and master branches have a DJ implementation.",
+                        inline: false
                     },
                     {
                         name: "Github",

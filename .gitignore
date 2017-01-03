@@ -9,3 +9,4 @@ ffmpeg
 #Don't include test commannds
 commands/embedtest.js
 commands/test.js
+debug.log
