@@ -67,3 +67,19 @@ footer.page-footer.mint
 {
   color: #A7FCD0;
 }
+.mint-outline
+{
+    text-shadow:
+    -1px -1px 0 #A7FCD0,
+    1px -1px 0 #A7FCD0,
+    -1px 1px 0 #A7FCD0,
+    1px 1px 0 #A7FCD0;  
+}
+.black-outline
+{
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;  
+}
