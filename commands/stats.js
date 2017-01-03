@@ -104,7 +104,7 @@ module.exports = function command(bot, info)
                     {
                         name: "Invite Link",
                         value: "https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0",
-                        inline:false
+                        inline: false
                     },
                     {
                         name: "About",
