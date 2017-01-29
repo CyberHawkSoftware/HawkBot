@@ -14,7 +14,7 @@ module.exports = function command(bot, info)
         {
           const getAvatar = function(uid)
           {
-            return "https://cdn.discordapp.com/avatars/" +uid+"/"+bot.users[uid].avatar+".jpg";
+            return 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.gif';
           }
           console.log(details.input);
           if(details.input === "")
