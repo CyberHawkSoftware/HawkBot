@@ -1,0 +1,105 @@
+footer.page-footer {
+  margin: 0;
+}
+footer.page-footer.mint
+{
+  background-color: #A7FCD0;
+}
+.mint
+{
+  background-color: #A7FCD0;
+}
+.mint-text
+{
+  color: #A7FCD0;
+}
+.collection .collection-item
+{
+  color: black;
+  background-color: #A7FCD0;
+  border-color:black;
+}
+.collection a.collection-item
+{
+  color: black;
+}
+[type="checkbox"]:checked+label:before
+{
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+input[type=text]
+{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: inherit;
+  background-color: white;
+  padding-left: 5px;
+  transition: inherit;
+  -webkit-transition: inherit;
+}
+input[type=text]:focus:not([readonly])
+{
+  border: 2px solid black;
+  border-bottom-color: black;
+  border-bottom: 2px solid black;
+  box-shadow: none;
+}
+label
+{
+  font-size: inherit;
+  color:black;
+  display: block;
+}
+.mintbtn:hover
+{
+  background-color: #A7FCD0;
+  color: black;
+}
+.mintbtn
+{
+  color: #A7FCD0;
+  background-color: black;
+}
+.submit-padding
+{
+  padding-top: 5px;
+}
+.collection
+{
+  border: none;
+  box-shadow: 5px 5px 2px grey;
+}
+.card-panel
+{
+  border: none;
+  box-shadow: 5px 5px 2px grey;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: white;
+    margin-right: 20px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover
+{
+  color:gray;
+  cursor: pointer;
+}
+h5
+{
+  border-bottom: black;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.card-panel span.mint-text h5
+{
+  border-bottom: #A7FCD0;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.card .card-reveal
+{
+  overflow-y: hidden;
+}

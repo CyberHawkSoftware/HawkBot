@@ -1,160 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>HawkBot Page</title>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/custom.css"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body class="black">
-  <nav class="black" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"><svg id="svg3387"class-"brand-logo" style="padding-top:10px" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="50" width="300" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 300 50">
+    <body class="black">
+      <nav class="mint black-text">
+        <div class="nav-wrapper">
+          <span class="brand-logo center"><svg id="svg3387" style="padding-top:10px" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="50" width="300" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 300 50">
             <g id="layer1" transform="translate(0 -1002.4)">
-              <text id="text3406" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" transform="scale(.95001 1.0526)" font-size="9.1316px" y="990.39447" x="17.7166" line-height="125%" fill="#A7FCD0"><tspan id="tspan3408" font-weight="bold" font-size="41.092px" y="990.39447" x="17.7166" font-family="&apos;Yu Gothic&apos;">サイバーホーク</tspan></text>
+              <text id="text3406" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" transform="scale(.95001 1.0526)" font-size="9.1316px" y="990.39447" x="17.7166" line-height="125%" fill="#000000"><tspan id="tspan3408" font-weight="bold" font-size="41.092px" y="990.39447" x="17.7166" font-family="&apos;Yu Gothic&apos;">サイバーホーク</tspan></text>
             </g>
-          </svg></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="mint-text" href="http://www.cyberhawk.co">Main Site</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="http://www.cyberhawk.co">Main Site</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons mint-text">menu</i></a>
-    </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center black-text mint-outline">HawkBot</h1>
-        <div class="row center">
-          <h5 class="header col s12 grey-text text-darken-2"></h5>
+          </svg></span>
+          <ul class="right">
+            <li>
+              <a class="black-text" href="https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0">
+                <span class="hide-on-med-and-down"><i class="large material-icons left">add_box</i>Invite HawkBot</span>
+              <i class="large material-icons small-only">add_box</i></a>
+            </li>
         </div>
-        <div class="row center">
-          <a href="https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0" id="download-button" class="btn-large waves-effect waves-light black-text mint">Invite Bot</a>
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
+        
+      </nav>
+      
       <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center mint-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center white-text">Fast Response time</h5>
-
-            <p class="light white-text">The bot responds almost instantly. I have revised and optimized the code in the back end. The commands that take the longest are held up by Discord itself loading their proxied images!</p>
+        <div class="col s12 m8 offset-m2 l8 offset-l2">
+          <h2 class="header center mint-text">HawkBot</h2>
+          <div class="card-panel mint">
+            <span class="black-text">
+              <div>
+                  <h4 class="center-align">Commands</h4>
+                  <h5 class="center-align">Notice</h5>
+                  <p class="center-align">&lt; is the default prefix. When using a command, do not include the &lt;>. They are placeholders for what you would enter.
+                    <br>An alias can be used in place of a command name, and would be used exactly like it would as if it were the command name.
+                  </p>
+                  <div class="row">
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">anime</h5>
+                            <p>Searches for info on an anime using Kitsu.io as a provider.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Anime<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;anime &lt;anime><br>&lt;anime &lt;anime> --list
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>an
+                            </span>
+                          </p>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">avatar</h5>
+                            <p>Gets the avatar of the user, or another person with a mention.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Avatar<i class="material-icons right">close</i></span>
+                          <p class="mint-text">
+                            &lt;avatar<br>&lt;avatar &lt;mention>
+                            <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>a
+                            </span>
+                            </p>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">cat</h5>
+                            <p>Gets a random cat image.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Cat<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;cat</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>c, neko, 猫
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">dog</h5>
+                            <p>Gets a random dog image.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Dog<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;dog</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>d, inu, 犬
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">invite</h5>
+                            <p>Gets the invite URL for HawkBot.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Invite<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;invite</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>i
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">isbn</h5>
+                            <p>Looks up books by title or isbn.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Invite<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;isbn &lt;isbn><br>&lt;isbn &lt;book title> --list</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>book
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">jisho</h5>
+                            <p>Looks up a word or phrase from Jisho.org</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Jisho<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;jisho &lt;word/phrase><br>&lt;jisho &lt;word/phrase> --list</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>j
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">source</h5>
+                            <p>Gets HawkBot's source.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Source<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;source</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>so
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">stats</h5>
+                            <p>Gets HawkBot's stats</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Stats<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;stats</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>s
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">time</h5>
+                            <p>Gets the time in a certain time zone, as well as a list of the time zones.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Time<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;time<br>&lt;time &lt;time zone><br>&lt;time --list</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>t
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                      <div class="card black">
+                        <div class="card-content">
+                          <span class="mint-text">
+                            <h5 class="center">help</h5>
+                            <p>Prints out the help menu.</p>
+                          </span>
+                        </div>
+                        <div class="card-reveal black">
+                          <span class="card-title mint-text">Help<i class="material-icons right">close</i></span>
+                          <p class="mint-text">&lt;help</p>
+                          <div class="divider"></div>
+                            <span class="mint-text">
+                              Alias<br>?
+                            </span>
+                        </div>
+                        <div class="card-action">
+                          <a class="activator">Usage</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </span>
           </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center mint-text"><i class="material-icons">group</i></h2>
-            <h5 class="center white-text">User Tested</h5>
-
-            <p class="light white-text">As a developer, I test the commands when I make them. The user base does the real testing. The Jisho command was tested on a server of just about 1000 people. It has been refined over the course of over 7 months!</p>
+      </div>
+      
+      <footer class="page-footer mint">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="black-text">HawkBot</h5>
+              <p class="black-text text-lighten-4">Written in NodeJS, using the Discord.io Lib.</br>
+                Made with <i class="material-icons">favorite</i> by CyberRonin#5517.
+              </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="black-text">Important Links</h5>
+                <ul>
+                  <li><a class="black-text text-lighten-3" href="https://discord.gg/jDpR9PD">Discord Server</a></li>
+                  <li><a class="black-text text-lighten-3" href="https://discordapp.com/oauth2/authorize?response_type=code&redirect_uri=http%3A%2F%2Fbot.cyberhawk.co%2Flogin&scope=identify%20guilds&client_id=266929822385569792">Portal Login</a></li>
+                  <li><a class="black-text text-lighten-3" href="https://github.com/CyberHawkSoftware/HawkBot">Github Repo</a></li>
+                  <li><a class="black-text text-lighten-3" href="https://bots.discord.pw/bots/193403332046487552">Discord Bots HawkBot Page</a></li>
+                </ul>
+            </div>
           </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center mint-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center white-text">Easy to work with</h5>
-
-            <p class="light white-text">I designed every command with at least one alias. Believe it or not, that seems like a rare feature. Why type out "help" if you only need a question mark? If you still want to use "help" you still can. For certain commands like for random cat and dog images, you can use "neko" and "inu", or even "猫" and "犬". Most of the commands have a one to two character alias as well.</p>
+        <div class="footer-copyright">
+          <div class="container black-text">
+            Copyright © 2016-2017 Cyberhawk.co, All Rights Reserved
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 white-text black-outline">Completely Open Source!</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send white-text"></i></h3>
-          <h4 class="white-text">Contact</h4>
-          <p class="left-align light white-text">I will be available quite often on my Discord server for my bot. There is a place for support, suggestions, or you can just chill in general chat! You can also submit issues, pull requests or forks right off of the Github page for the bot. It is open source, after all.</p>
-          <div class="row center">
-            <a href="https://discord.gg/jDpR9PD" id="download-button" class="btn waves-effect waves-light black-text mint">Server Invite</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 white-text black-outline">HawkBot was designed using NodeJS</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer mint">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Documentation</h5>
-          <p class="black-text text-lighten-4">Further documentation will be on the Github Wiki. It's a work in progress and will be added to over time. If you have immediate questions, go to the Discord server!</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="black-text">Related Links</h5>
-          <ul>
-            <li><a class="black-text text-lighten-3" href="http://www.cyberhawk.co">CyberHawk Main Page</a></li>
-            <li><a class="black-text text-lighten-3" href="https://github.com/CyberHawkSoftware/HawkBot">Github Repo</a></li>
-            <li><a class="black-text text-lighten-3" href="https://discord.gg/jDpR9PD">Discord Server</a></li>
-            <li><a class="black-text text-lighten-3" href="https://bots.discord.pw/bots/193403332046487552">Discord Bots HawkBot Page</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container black-text">
-      Copyright © 2016-2017 Cyberhawk.co, All Rights Reserved
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
-</html>
+      </footer>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>
+        
