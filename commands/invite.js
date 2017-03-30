@@ -4,6 +4,7 @@ module.exports = function command(bot, info)
     "use strict";
     const pack = require('../package.json');
     return {
+        name: 'Invite',
         inline: true,
         alias: ['i'],
         description: "(Gets the bot's invite link)",
