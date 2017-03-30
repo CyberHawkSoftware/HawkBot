@@ -172,7 +172,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
         }
       }).catch((info) =>
       {
-        console.log(info);
+        //console.log(info);
       });
     } 
   }
