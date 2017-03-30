@@ -134,7 +134,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
               }
               else
               {
-                disabled();
+                disabled(details);
               }
             }).catch((err) =>
             {
@@ -159,7 +159,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
                     }
                     else
                     {
-                      disabled();
+                      disabled(details);
                     }
                   }).catch((err) =>
                   {
@@ -218,7 +218,7 @@ function processCommand(command, details)
     commands[command].action(details);
   }
 }
-function disabled()
+function disabled(details)
 {
   bot.sendMessage({
     to: details.channelID,
