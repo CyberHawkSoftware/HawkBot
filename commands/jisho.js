@@ -5,6 +5,7 @@ module.exports = function command(bot, info)
     const utility = info.utility;
     
     return{
+        name: 'Jisho',
         inline: false,
         alias: ['j'],
         description: "[<word/sentence>, <word/sentence> --list, <word/sentence> <number from --list>] Looks up a word from Jisho.org, you may use jisho <word> --list to get a list of definitions. Then use jisho <word> <number> and that will display the definition",

@@ -1,0 +1,165 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+footer.page-footer {
+  margin: 0;
+}
+footer.page-footer.mint
+{
+  background-color: #A7FCD0;
+}
+.mint
+{
+  background-color: #A7FCD0;
+}
+.mint-text
+{
+  color: #A7FCD0;
+}
+.collection .collection-item
+{
+  color: #424242;
+  background-color: #9e9e9e;
+  border-color:#424242;
+}
+.collection a.collection-item
+{
+  color: #424242;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color: #A7FCD0;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+[type="checkbox"]:checked+label:before
+{
+  border-right: 2px solid #424242;
+  border-bottom: 2px solid #424242 ;
+}
+input[type=text]
+{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: inherit;
+  background-color: white;
+  padding-left: 5px;
+  transition: inherit;
+  -webkit-transition: inherit;
+}
+input[type=text]:focus:not([readonly])
+{
+  border: 2px solid #424242;
+  border-bottom-color: #424242;
+  border-bottom: 2px solid #424242;
+  box-shadow: none;
+}
+label
+{
+  font-size: inherit;
+  color:#424242 ;
+  display: block;
+}
+.mintbtn:hover
+{
+  background-color: #A7FCD0;
+  color: #424242;
+}
+.mintbtn
+{
+  color: #A7FCD0;
+  background-color: #424242;
+}
+.submit-padding
+{
+  padding-top: 5px;
+}
+.collection
+{
+  box-shadow: 0 2px 2px 0 #212121, 0 1px 5px 0 #212121, 0 3px 1px -2px #212121;
+  border: none;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)
+{
+    color: grey;
+    margin-right: 20px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover
+{
+  color:#212121 ;
+  cursor: pointer;
+}
+h5
+{
+  border-bottom: #212121 ;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.card-panel span.mint-text h5
+{
+  border-bottom: #A7FCD0;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.card .card-reveal
+{
+  overflow-y: hidden;
+}
+.darkgrey
+{
+  color: #333;
+}
+.activator
+{
+  color: grey;
+  margin-right: 20px;
+  transition: color .3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.activator:hover
+{
+  color:black;
+  cursor: pointer;
+}
+
+body
+{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main
+{
+  flex: 1 0 auto;
+}
+.mint-logo:hover
+{
+  fill: #424242;
+}
+.custom-card .card-action
+{
+  border-top: 1px solid #212121;
+}
+.custom-card
+{
+  box-shadow: 0 2px 2px 0 #212121, 0 1px 5px 0 #212121, 0 3px 1px -2px #212121;
+}
+.custom-card .card-action a
+{
+  color: #A7FCD0 !important;
+}
+.custom-card .card-action a:hover
+{
+  color: #212121 !important;
+}
+.center
+{
+  text-align: center;
+}
+label.custom
+{
+  text-align: left;
+}

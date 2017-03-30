@@ -3,6 +3,7 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        name: 'Avatar',
         inline: false,
         //the alias can be set by putting what you'd like in that array
         alias: ['a'],

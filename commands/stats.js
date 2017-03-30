@@ -4,6 +4,7 @@ module.exports = function command(bot, info)
     "use strict";
     const pack = require('../package.json');
     return {
+        name: 'Stats',
         inline: true,
         alias: ['s'],
         description: "(Returns some bot stats)",

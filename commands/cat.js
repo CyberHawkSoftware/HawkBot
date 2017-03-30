@@ -5,6 +5,7 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        name: 'Cat',
         inline: true,
         //the alias can be set by putting what you'd like in that array
         alias: ['c', 'neko', '猫'],

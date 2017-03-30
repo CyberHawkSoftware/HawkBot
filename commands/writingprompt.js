@@ -5,6 +5,7 @@ module.exports = function command(bot, info)
 {
     "use strict";
     return {
+        name: 'Writing Prompt',
         inline: true,
         //the alias can be set by putting what you'd like in that array
         alias: ['wp'],
