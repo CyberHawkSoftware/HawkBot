@@ -87,13 +87,13 @@ label
   color:gray;
   cursor: pointer;
 }
-h5
+h5.grey-underline
 {
-  border-bottom: black;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
+  border-bottom: #424242 !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 2px !important;
 }
-.card-panel span.mint-text h5
+.card-panel h5
 {
   border-bottom: #A7FCD0;
   border-bottom-style: solid;
