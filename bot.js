@@ -128,7 +128,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
           {
             db.checkEnabled(details.serverID, keyword).then((enabled) =>
             {
-              if(enabled || keyword === 'help')
+              if(enabled || keyword === 'help' || keyword === 'stats')
               {
                 processCommand(keyword, details);
               }
@@ -153,7 +153,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
                 { 
                   db.checkEnabled(details.serverID, index).then((enabled) =>
                   {
-                    if(enabled || index === 'help')
+                    if(enabled || index === 'help' || index === 'stats')
                     {
                       processCommand(index, details);
                     }
