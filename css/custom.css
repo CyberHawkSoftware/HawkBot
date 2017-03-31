@@ -67,20 +67,20 @@ label
 }
 .collection
 {
+  box-shadow: 0 2px 2px 0 #212121, 0 1px 5px 0 #212121, 0 3px 1px -2px #212121;
   border: none;
-  box-shadow: 5px 5px 2px grey;
 }
 .card-panel
 {
+  box-shadow: 0 2px 2px 0 #212121, 0 1px 5px 0 #212121, 0 3px 1px -2px #212121;
   border: none;
-  box-shadow: 5px 5px 2px grey;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-    color: white;
-    margin-right: 20px;
-    transition: color .3s ease;
-    text-transform: uppercase;
-    cursor: pointer;
+  color: white;
+  margin-right: 20px;
+  transition: color .3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover
 {
@@ -102,4 +102,28 @@ h5.grey-underline
 .card .card-reveal
 {
   overflow-y: hidden;
+}
+footer.page-footer
+{
+  padding-top: 5px;
+}
+.page-footer .container .row
+{
+  margin-bottom: 0px;
+}
+.page-footer p
+{
+  margin-bottom: 0px;
+}
+.mint-logo:hover
+{
+  fill: #424242;
+}
+.mint-logo-stroke:hover
+{
+  stroke: #424242;
+}
+.logo-text:hover
+{
+  cursor: default;
 }
