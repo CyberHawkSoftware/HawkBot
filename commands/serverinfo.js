@@ -16,6 +16,7 @@ module.exports = function command(bot, info)
 
       const getInfo = function(uid)
       {
+        
         let emb = {};
         let server = bot.servers[details.serverID];
         let safe = false;
@@ -43,7 +44,7 @@ module.exports = function command(bot, info)
           let members = {name: 'Members', value: `${server.member_count} Members`};
           fields.push(members);
           //roles
-          let serverRoles = {name: 'Roles', value: Object.keys(server.roles).map(x => server.roles[x].name).join(', ')};
+          let serverRoles = {name: 'Roles', value: getRoles(bot.servers[details.serverID])};
           fields.push(serverRoles);
           emb.fields = fields;
 
