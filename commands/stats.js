@@ -61,12 +61,12 @@ module.exports = function command(bot, info)
                     thumbnail: {
                         url: "https://cdn.discordapp.com/avatars/193403332046487552/cc2379129ee5450d617a1170a468e4f9.jpg"
                     },
-                    fields:[/*
+                    fields:[
                     {
-                        name: "HawkBot's Stats",
-                        value: "",
-                        inline: false  
-                    },*/
+                        name: "Web Control Panel",
+                        value: "https://bot.cyberhawk.co",
+                        inline: true
+                    },
                     {
                         name: "Servers",
                         value: Object.keys(bot.servers).length,
