@@ -63,11 +63,6 @@ module.exports = function command(bot, info)
                     },
                     fields:[
                     {
-                        name: "Web Control Panel",
-                        value: "https://bot.cyberhawk.co",
-                        inline: true
-                    },
-                    {
                         name: "Servers",
                         value: Object.keys(bot.servers).length,
                         inline: true
@@ -90,6 +85,11 @@ module.exports = function command(bot, info)
                     {
                         name: "Uptime",
                         value: convertDate(now - info.start),
+                        inline: true
+                    },
+                    {
+                        name: "Web Control Panel",
+                        value: "https://bot.cyberhawk.co",
                         inline: true
                     },
                     {
