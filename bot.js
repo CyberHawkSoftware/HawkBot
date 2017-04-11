@@ -17,13 +17,24 @@ let db = info.db;
 info.start = new Date();
 //When the bot is ready
 bot.on('ready', function() {
-console.log(bot.username + " - (" + bot.id + ")");
-    //Set the bot's "Playing" to the config file's playing
+  bot.getAllUsers((err) =>
+  {
+    if(err)
+    {
+      console.log(err);
+    }
+  });
+  console.log(bot.username + " - (" + bot.id + ")");
+  //Set the bot's "Playing" to the config file's playing
+  function setPlaying()
+  {
     bot.setPresence({
-        game:{
-        name: utility.filter(info.config.playing)
-        }
+    game:{
+    name: utility.filter(info.config.playing)
+    }
     });
+  }
+  setTimeout(setPlaying, 5000);
 });
 //When there is a message fired that the bot can see, process it
 bot.on('message', function(user, userID, channelID, message, event) {
