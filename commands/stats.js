@@ -109,12 +109,12 @@ module.exports = function command(bot, info)
                     },
                     {
                         name: "About",
-                        value: "Primary purpose is to serve as a Jisho & anime lookup, but there are fun commands as well. The beta and master branches have a DJ implementation.",
+                        value: "Primary purpose is to serve as a Jisho, kanji & anime lookup, but there are fun commands as well",
                         inline: false
                     },
                     {
                         name: "Github",
-                        value: "[Public Branch - no audio](https://github.com/CyberHawkSoftware/HawkBot/tree/public)\n[Beta Branch - Most up to date w/audio](https://github.com/CyberHawkSoftware/HawkBot/tree/beta)\n[Master Branch w/audio](https://github.com/CyberHawkSoftware/HawkBot/tree/master)",
+                        value: "[Public Branch - no audio](https://github.com/CyberHawkSoftware/HawkBot/tree/public)",
                         inline: true
                     }]
                 }
