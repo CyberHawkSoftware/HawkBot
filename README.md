@@ -5,7 +5,7 @@
 HawkBot recently got a web portal! [Web Portal](https://bot.cyberhawk.co)  
 ### Shoutouts
 Shoutout to Frosthaven for the overall idea of the layout and a few functions from utility as well as the memory command! :)  
-Shoutout to izy for making Discord.io and being awesome to talk to.
+Shoutout to izy for making Discord.io and being awesome to talk to.  
 Shoutout to Minemidnight for pointing me in the right direction for the web portal
 #
 ## Commands  
