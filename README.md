@@ -1,7 +1,7 @@
 <p align="center"><img src="http://www.cyberhawk.co/logo-alt.svg"></p>
 <h1 align="center">HawkBot</h1>
-#
-### Shoutout to Frosthaven for the overall idea of the layout and a few functions from utility as well as the memory command! :)
+
+##### Shoutout to Frosthaven for the overall idea of the layout and a few functions from utility as well as the memory command! :)
 #
 ## Commands  
 | Name | Alias | Usage | Description |
