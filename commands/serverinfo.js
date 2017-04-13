@@ -1,4 +1,4 @@
-//gets the info for a server
+//Gets the info for a server
 module.exports = function command(bot, info)
 {
   'use strict';
@@ -22,7 +22,7 @@ module.exports = function command(bot, info)
         let safe = false;
         if(server != undefined)
         {
-          emb.title = server.name + "'s Info";
+          emb.title = server.name + '\'s Info';
           emb.description = '\n _ _';
           let thumbnail = {url: getIcon(details.serverID)};
           emb.thumbnail = thumbnail;

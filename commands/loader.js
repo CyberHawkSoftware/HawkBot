@@ -1,4 +1,4 @@
-//loads the commands in from ./commands and builds the help menu
+//Loads the commands in from ./commands and builds the help menu
 //the help menu displays only the commands that a user can use
 module.exports = function commandLoad(bot,info)
 {
@@ -126,6 +126,5 @@ module.exports = function commandLoad(bot,info)
 
     }
   };
-
   return commands;
 };

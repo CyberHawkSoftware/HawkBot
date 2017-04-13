@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const discord = require('discord.io');
 const fs = require('fs');
 const info = {};
@@ -24,27 +24,27 @@ bot.on('ready', function() {
       console.log(err);
     }
   });
-  console.log(bot.username + " - (" + bot.id + ")");
+  console.log(bot.username + ' - (' + bot.id + ')');
   //Set the bot's "Playing" to the config file's playing
   function setPlaying()
   {
     bot.setPresence({
-    game:{
-    name: utility.filter(info.config.playing)
-    }
+      game:{
+        name: utility.filter(info.config.playing)
+      }
     });
   }
   setTimeout(setPlaying, 10000);
 });
 //When there is a message fired that the bot can see, process it
 bot.on('message', function(user, userID, channelID, message, event) {
-    const details = {
-        user: user,
-        userID: userID,
-        channelID: channelID,
-        message: message,
-        event: event
-    };
+  const details = {
+    user: user,
+    userID: userID,
+    channelID: channelID,
+    message: message,
+    event: event
+  };
 //was it a direct message?
   details.isDirectMessage = details.channelID in bot.directMessages ? true : false;
   if(details.isDirectMessage)

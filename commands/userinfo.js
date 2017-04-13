@@ -17,7 +17,7 @@ module.exports = function command(bot, info)
       const getInfo = function(uid)
       {
         let emb = {};
-        emb.title = bot.users[uid].username + "'s Info";
+        emb.title = bot.users[uid].username + '\'s Info';
         emb.description = '\n _ _';
         let server = bot.servers[details.serverID];
         let extras = false;
@@ -36,15 +36,15 @@ module.exports = function command(bot, info)
           emb.color = bot.servers[details.serverID].members[uid].color;
           if(bot.servers[details.serverID].members[uid].nick)
           {
-            let nickname = {name: "Nickname:", value: bot.servers[details.serverID].members[uid].nick};
+            let nickname = {name: 'Nickname:', value: bot.servers[details.serverID].members[uid].nick};
             fields.push(nickname);
           }
           
-          let joined = {name: "Joined", value: getJoinedTime(uid)};
+          let joined = {name: 'Joined', value: getJoinedTime(uid)};
           fields.push(joined);
         }
 
-        let created = {name: "Created:", value: getCreatedTime(uid)};
+        let created = {name: 'Created:', value: getCreatedTime(uid)};
         fields.push(created);
         if(bot.users[uid].game != null)
         {
