@@ -34,7 +34,7 @@ bot.on('ready', function() {
     }
     });
   }
-  setTimeout(setPlaying, 5000);
+  setTimeout(setPlaying, 10000);
 });
 //When there is a message fired that the bot can see, process it
 bot.on('message', function(user, userID, channelID, message, event) {
