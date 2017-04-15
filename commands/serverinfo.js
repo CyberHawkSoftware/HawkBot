@@ -129,7 +129,7 @@ module.exports = function command(bot, info)
         let uid = info.utility.stripUID(details.args[1]);
         if(uid)
         {
-          let link = getAvatar(uid);
+          let link = getIcon(uid);
           if(link.includes('null.jpg'))
           {
             bot.sendMessage({
