@@ -33,6 +33,7 @@ bot.on('ready', function() {
         name: utility.filter(info.config.playing)
       }
     });
+    console.log(`${utility.filter(info.config.playing)} setPresence fired @ ` + new Date());
   }
   setTimeout(setPlaying, 10000);
 });
