@@ -70,7 +70,7 @@ module.exports = function command(bot, info)
         let localOffset = 5 * 60000;
         let utc = d.getTime() + localOffset;
         let dUTC = new Date(utc);
-        return `${d.toUTCString()}`;
+        return `${dUTC.toLocaleString()} UTC`;
 
       };
       const getAvatar = function(uid)
