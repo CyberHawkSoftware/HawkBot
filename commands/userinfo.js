@@ -66,11 +66,11 @@ module.exports = function command(bot, info)
       };
       const getJoinedTime = function(uid)
       {
-        let d = new Date(bot.servers[details.serverID].members[details.userID].joined_at);
+        let d = new Date(bot.servers[details.serverID].members[uid].joined_at);
         let localOffset = 5 * 60000;
         let utc = d.getTime() + localOffset;
         let dUTC = new Date(utc);
-        return `${dUTC.toLocaleString()} UTC`;
+        return `${dUTC.toUTCString()}`;
 
       };
       const getAvatar = function(uid)
