@@ -35,7 +35,7 @@
             <ul class="right">
               {{#if user}}
               <li style="padding-right:2px;">
-                <a class="dropdown-button mint-text" href="#!" data-activates="user-dropdown">
+                <a class="button-collapse show-on-large mint-text" href="#!" data-activates="slide-out">
                   {{#if user.avatar}}
                   <img width="50" height="50"src="https://cdn.discordapp.com/avatars/{{user.id}}/{{user.avatar}}.jpg" alt="" class="circle" style="vertical-align:middle">
                   {{else}}
@@ -43,6 +43,26 @@
                   {{/if}}
                 <span class="hide-on-small-only">{{user.username}}#{{user.discriminator}}</span></a>
               </li>
+              <ul id="slide-out" class="side-nav grey darken-3">
+                <li>
+                  <div class="userView">
+                  <div class="background grey"> 
+                  </div>
+                  {{#if user.avatar}}
+                  <img class="circle" src="https://cdn.discordapp.com/avatars/{{user.id}}/{{user.avatar}}.jpg" alt="">
+                  {{else}}
+                  <img class="circle" src="./default_avatar.png" alt="">
+                  {{/if}}
+                  <span class="grey-text text-darken-3 reg-cursor name">{{user.username}}</span>
+                  <span class="grey-text text-darken-3 reg-cursor email">#{{user.descriminator}}</span>
+                </div>
+                </li>
+                <li><a href="https://bot.cyberhawk.co/servers" class="mint-text"><i class="material-icons mint-text">settings</i>Servers</a></li>
+                <li><a href="https://bot.cyberhawk.co/logout" class="mint-text"><i class="material-icons mint-text">directions_run</i>Logout</a></li>
+                <li><div class="mint-divider"></div></li>
+                <li><a class="subheader white-text">Suggestions/Feedback?</a></li>
+                <li><a class="mint-text" href="https://discord.gg/jDpR9PD" target="_blank">Join the Discord Server!</a></li>
+              </ul>
               {{else}}
               <li>
                 <a class="mint-text" href="https://discordapp.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fbot.cyberhawk.co%2Flogin&scope=identify%20guilds&client_id=193403294419255297">
