@@ -12,7 +12,7 @@ footer.page-footer.mint
 }
 .mint-text
 {
-  color: #A7FCD0;
+  color: #A7FCD0 !important;
 }
 .collection .collection-item
 {
