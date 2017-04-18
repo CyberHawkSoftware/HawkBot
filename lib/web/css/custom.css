@@ -203,3 +203,9 @@ nav .button-collapse
 {
   cursor: default;
 }
+.side-nav .userView .email
+{
+  font-size: 12px;
+  top: -10px !important;
+  position: relative;
+}
