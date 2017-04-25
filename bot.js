@@ -9,6 +9,7 @@ info.commands = require('./commands/loader.js')(bot,info);
 info.db = require('./lib/db.js')(bot, info);
 info.web = require('./lib/portal.js')(bot,info);
 info.time = require('./tz-pretty.json');
+info.trello = require('./plugins/trello.js')(bot,info);
 info.manualKill = false;
 const utility = info.utility;
 const config = info.config;
@@ -55,8 +56,6 @@ bot.on('message', function(user, userID, channelID, message, event) {
     if(details.isCommandForm)
     {
       details.prefix = config.prefix;
-      details.isMod = false;
-      details.isElevated = false;
       details.isAdministrator = utility.isAdministrator(details.userID);
       let cmd = utility.stripPrefix(message);
       let keyword = cmd.split(' ')[0];
@@ -100,34 +99,13 @@ bot.on('message', function(user, userID, channelID, message, event) {
           details.prefix = info.prefix;
           //is the message sender listed as an administrator?
           details.isAdministrator = utility.isAdministrator(details.userID);
-          if(details.isDirectMessage)
+
+          if(!details.isAdministrator)
           {
-            details.isMod = false;
-            details.isElevated = false;
-          }
-          else
-          {
-            if(!details.isAdministrator)
-            {
-              details.serverID = utility.getServerID(details.channelID);
-              //does the message sender have elevated priveleges?
-              try{
-                details.isMod = utility.checkModPerm(details.userID, details.serverID);
-                if(!details.isMod)
-                {
-                  //if sender is not a mod, check to see if they are elevated
-                  details.isElevated = utility.checkCommandPerm(details.userID, details.serverID);
-                }
-              }
-              catch(err)
-              {
-                console.log(err);
-                details.isMod = false;
-                details.isElevated = false;
-              }
-            }
             details.serverID = utility.getServerID(details.channelID);
+            //does the message sender have elevated priveleges?
           }
+          details.serverID = utility.getServerID(details.channelID);
           //separate the command from the rest of the string
           let cmd = utility.stripServerPrefix(message, info.prefix);
           let keyword = cmd.split(' ')[0];
@@ -214,14 +192,6 @@ bot.on('disconnect',function(errMsg, code)
 function processCommand(command, details)
 {
   if(commands[command].permissions == 'public')
-  {
-    commands[command].action(details);
-  }
-  else if(commands[command].permissions == 'elevated' && (details.isMod || details.isElevated || details.isAdministrator))
-  {
-    commands[command].action(details);
-  }
-  else if(commands[command].permissions == 'mod' && (details.isMod || details.isAdministrator))
   {
     commands[command].action(details);
   }
