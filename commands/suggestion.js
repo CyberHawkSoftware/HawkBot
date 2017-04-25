@@ -12,7 +12,7 @@ module.exports = function command(bot, info)
     action: function(details)
     {
       bot.sendMessage({
-        to: '215098225147904000',
+        to: info.config.suggestion_channel,
         embed: {
           title: 'Suggestion',
           description: details.input,
