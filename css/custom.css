@@ -127,3 +127,11 @@ footer.page-footer
 {
   cursor: default;
 }
+.row .col
+{
+  padding: 0 0.50rem;
+}
+.row
+{
+  margin-bottom: auto;
+}
