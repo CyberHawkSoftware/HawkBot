@@ -13,7 +13,7 @@ module.exports = function command(bot, info)
     {
       bot.sendMessage({
         to: details.channelID,
-        message: 'https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0'
+        message: '<https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0>'
       });
     }
   };
