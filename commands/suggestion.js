@@ -6,7 +6,7 @@ module.exports = function command(bot, info)
     inline: true,
     name: 'Suggestion',
     alias: ['su'],
-    description: 'Submits a suggestion to the developer of HawkBot :)',
+    description: '<suggestion> Submits a suggestion to the developer of HawkBot :)',
     //public, elevated, mod, or private
     permissions: 'public',
     action: function(details)
