@@ -11,6 +11,7 @@ info.web = require('./lib/portal.js')(bot,info);
 info.time = require('./tz-pretty.json');
 info.trello = require('./plugins/trello.js')(bot,info);
 info.manualKill = false;
+info.botList = require('./plugins/botlist.js')(bot,info);
 const utility = info.utility;
 const config = info.config;
 const commands = info.commands;
