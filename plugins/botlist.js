@@ -38,4 +38,5 @@ module.exports = function plugin(bot, info)
     submit(botsOrg);
     submit(botsPW);
   }
+  return plugin;
 }
