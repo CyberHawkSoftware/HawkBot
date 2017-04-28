@@ -14,7 +14,7 @@ module.exports = function plugin(bot, info)
       }
       else
       {
-       console.log(response); 
+       console.log(body); 
       }
     });
   }
