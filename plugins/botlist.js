@@ -12,6 +12,10 @@ module.exports = function plugin(bot, info)
       {
         console.log(err)
       }
+      else
+      {
+       console.log(response); 
+      }
     });
   }
   plugin.updateBotLists = function()
