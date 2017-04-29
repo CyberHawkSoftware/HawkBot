@@ -22,13 +22,14 @@ module.exports = function plugin(bot, info)
   {
     return new Promise((resolve, reject) =>
     {
-      resolve({server_count: Object.keys(bot.servers).length});
+      resolve({"server_count": Object.keys(bot.servers).length});
     });
   }
   plugin.updateBotLists = function()
   {
     getInfo().then((status) =>
     {
+      console.log(status);
       let botsPW = {
       url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
       json: true,
