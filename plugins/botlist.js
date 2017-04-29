@@ -6,7 +6,7 @@ module.exports = function plugin(bot, info)
   const plugin = {};
   function submit(options)
   {
-    request.post(options, (err, response, body) =>
+    request(options, (err, response, body) =>
     {
       if(err)
       {
@@ -29,10 +29,9 @@ module.exports = function plugin(bot, info)
   {
     getInfo().then((status) =>
     {
-      console.log(status);
       let botsPW = {
       url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
-      json: true,
+      method: 'POST',
       headers: {
         'Authorization': info.config.api.botsPW,
         'content-type': 'application/json'
@@ -41,11 +40,11 @@ module.exports = function plugin(bot, info)
       }
       let botsOrg = {
         url: 'https://discordbots.org/api/bots/193403332046487552/stats',
-        json: true,
+        method: 'POST',
         headers: {
           'Authorization': info.config.api.botsOrg
         },
-        form: status
+        body: status
       }
       submit(botsOrg);
       submit(botsPW);
