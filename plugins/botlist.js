@@ -37,7 +37,7 @@ module.exports = function plugin(bot, info)
         'Authorization': info.config.api.botsPW,
         'content-type': 'application/json'
       },
-      form: JSON.stringify(status)
+      body: JSON.stringify(status)
       }
       let botsOrg = {
         url: 'https://discordbots.org/api/bots/193403332046487552/stats',
