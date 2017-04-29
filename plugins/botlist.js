@@ -44,7 +44,7 @@ module.exports = function plugin(bot, info)
         headers: {
           'Authorization': info.config.api.botsOrg
         },
-        body: status
+        body: JSON.stringify(status)
       }
       submit(botsOrg);
       submit(botsPW);
