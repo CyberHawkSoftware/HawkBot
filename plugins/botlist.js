@@ -18,29 +18,37 @@ module.exports = function plugin(bot, info)
       }
     });
   }
+  function getInfo()
+  {
+    return new Promise((resolve, reject) =>
+    {
+      resolve({server_count: Object.keys(bot.servers).length});
+    });
+  }
   plugin.updateBotLists = function()
   {
-    let status = {
-      server_count: Object.keys(bot.servers).length
-    }
-    let botsPW = {
+    getInfo().then(status)
+    {
+      let botsPW = {
       url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
       json: true,
       headers: {
         'Authorization': info.config.api.botsPW
       },
       form: status
+      }
+      let botsOrg = {
+        url: 'https://discordbots.org/api/bots/193403332046487552/stats',
+        json: true,
+        headers: {
+          'Authorization': info.config.api.botsOrg
+        },
+        form: status
+      }
+      submit(botsOrg);
+      submit(botsPW);
     }
-    let botsOrg = {
-      url: 'https://discordbots.org/api/bots/193403332046487552/stats',
-      json: true,
-      headers: {
-        'Authorization': info.config.api.botsOrg
-      },
-      form: status
-    }
-    submit(botsOrg);
-    submit(botsPW);
   }
+
   return plugin;
 }
