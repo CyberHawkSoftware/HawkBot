@@ -27,7 +27,7 @@ module.exports = function plugin(bot, info)
   }
   plugin.updateBotLists = function()
   {
-    getInfo().then(status)
+    getInfo().then((status) =>
     {
       let botsPW = {
       url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
@@ -47,7 +47,7 @@ module.exports = function plugin(bot, info)
       }
       submit(botsOrg);
       submit(botsPW);
-    }
+    });
   }
 
   return plugin;
