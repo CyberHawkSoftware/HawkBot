@@ -141,32 +141,39 @@ module.exports = function command(bot, info)
       const getDefinitions = function(sensesArr)
       {
         let definitions = '';
+        let numDefs = 0;
         for(var i = 0; i < sensesArr.length; i ++)
         {
-          definitions += (i+1) + '. ';
-          if(concatArr(sensesArr[i].parts_of_speech) == '')
+          if(sensesArr[i].english_definitions !== undefined)
           {
-            if(concatArr(sensesArr[i].tags) == '')
+            definitions += (numDefs+1) + '. ';
+            numDefs ++;
+            if(concatArr(sensesArr[i].parts_of_speech) == '')
             {
-              definitions += concatArr(sensesArr[i].english_definitions) +'\n';
+              if(concatArr(sensesArr[i].tags) == '')
+              {
+                definitions += concatArr(sensesArr[i].english_definitions) +'\n';
+              }
+              else
+              {
+                definitions+= concatArr(sensesArr[i].english_definitions) + ' - ' + concatArr(sensesArr[i].tags) + '. ' + concatArr(sensesArr[i].info) + '\n';
+              }
             }
             else
             {
-              definitions+= concatArr(sensesArr[i].english_definitions) + ' - ' + concatArr(sensesArr[i].tags) + '. ' + concatArr(sensesArr[i].info) + '\n';
+              definitions += '*' + concatArr(sensesArr[i].parts_of_speech) + '*: ';
+              if(concatArr(sensesArr[i].tags) == '')
+              {
+                definitions += concatArr(sensesArr[i].english_definitions) + '\n';
+              }
+              else
+              {
+                definitions+= concatArr(sensesArr[i].english_definitions) + ' - ' + concatArr(sensesArr[i].tags) + '. '+ concatArr(sensesArr[i].info) + '\n';
+              }
             }
           }
-          else
-          {
-            definitions += '*' + concatArr(sensesArr[i].parts_of_speech) + '*: ';
-            if(concatArr(sensesArr[i].tags) == '')
-            {
-              definitions += concatArr(sensesArr[i].english_definitions) + '\n';
-            }
-            else
-            {
-              definitions+= concatArr(sensesArr[i].english_definitions) + ' - ' + concatArr(sensesArr[i].tags) + '. '+ concatArr(sensesArr[i].info) + '\n';
-            }
-          }
+          
+          
         }
         return definitions;
       };
@@ -174,20 +181,24 @@ module.exports = function command(bot, info)
       const concatArr = function(arr)
       {
         let s = '';
-        for(let i = 0; i < arr.length; i++)
+        if(arr !== undefined)
         {
-          if(arr[i] != null)
+          for(let i = 0; i < arr.length; i++)
           {
-            if(i == (arr.length - 1))
+            if(arr[i] != null)
             {
-              s += arr[i];
-            }
-            else
-            {
-              s += arr[i] + ', ';
+              if(i == (arr.length - 1))
+              {
+                s += arr[i];
+              }
+              else
+              {
+                s += arr[i] + ', ';
+              }
             }
           }
         }
+        
         return s;
       };
       //takes all of the data found and displays it nicely
