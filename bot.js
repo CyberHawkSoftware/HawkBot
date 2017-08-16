@@ -32,7 +32,8 @@ bot.on('ready', function() {
   {
     bot.setPresence({
       game:{
-        name: utility.filter(info.config.playing)
+        name: utility.filter(info.config.playing),
+        type: 0
       }
     });
     console.log(`${utility.filter(info.config.playing)} setPresence fired @ ` + new Date());
