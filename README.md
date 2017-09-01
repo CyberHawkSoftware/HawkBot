@@ -1,6 +1,4 @@
-<p align="center"><img src="http://www.cyberhawk.co/logo-alt.svg"></p>
-<h1 align="center">HawkBot</h1>  
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c5d872b3c17e430889b1934748f4f6c1)](https://www.codacy.com/app/TheCyberRonin/HawkBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CyberHawkSoftware/HawkBot&amp;utm_campaign=Badge_Grade)
 ## Features  
 HawkBot recently got a web portal! [Web Portal](https://bot.cyberhawk.co)  
 ### Shoutouts

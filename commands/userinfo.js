@@ -73,7 +73,16 @@ module.exports = function command(bot, info)
       };
       const getAvatar = function(uid)
       {
-        return 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.gif';
+        let ava = undefined;
+        if(bot.users[uid].avatar.startsWith('a_'))
+        {
+          ava = 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.gif';
+        }
+        else
+        {
+          ava = 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.webp';
+        }
+        return ava;
       };
       //console.log(details.input);
       if(details.input === '')

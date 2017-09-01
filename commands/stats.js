@@ -59,7 +59,7 @@ module.exports = function command(bot, info)
             text: 'Created by CyberRonin#5517'
           },
           thumbnail: {
-            url: 'https://cdn.discordapp.com/avatars/193403332046487552/cc2379129ee5450d617a1170a468e4f9.jpg'
+            url: `https://cdn.discordapp.com/avatars/${bot.id}/${bot.avatar}.webp`
           },
           fields:[
             {
