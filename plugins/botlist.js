@@ -14,7 +14,7 @@ module.exports = function plugin(bot, info)
       }
       else
       {
-       console.log(body); 
+        console.log(body); 
       }
     });
   }
@@ -30,14 +30,14 @@ module.exports = function plugin(bot, info)
     getInfo().then((status) =>
     {
       let botsPW = {
-      url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
-      method: 'POST',
-      headers: {
-        'Authorization': info.config.api.botsPW,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(status)
-      }
+        url: 'https://bots.discord.pw/api/bots/193403332046487552/stats',
+        method: 'POST',
+        headers: {
+          'Authorization': info.config.api.botsPW,
+          'content-type': 'application/json'
+          },
+        body: JSON.stringify(status)
+      };
       let botsOrg = {
         url: 'https://discordbots.org/api/bots/193403332046487552/stats',
         method: 'POST',
@@ -46,11 +46,10 @@ module.exports = function plugin(bot, info)
           'content-type': 'application/json'
         },
         form: status
-      }
+      };
       submit(botsOrg);
       submit(botsPW);
     });
   }
-
   return plugin;
 }
