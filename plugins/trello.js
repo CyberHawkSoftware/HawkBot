@@ -40,9 +40,9 @@ module.exports = function plugin(bot, info)
         {
           let newCard = {
             name: `${message.embeds[0].description}\n${message.embeds[0].footer.text}`,
-            idList: "58fe3b0d4e2f17d3cddb5f11",
-            pos: "top",
-            idLabels: "58fe3a14ced82109ff526fbf"
+            idList: '58fe3b0d4e2f17d3cddb5f11',
+            pos: 'top',
+            idLabels: '58fe3a14ced82109ff526fbf'
           };
           createCard(newCard);
         }
