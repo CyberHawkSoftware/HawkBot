@@ -11,7 +11,7 @@ const bot = new Client({
 info.utility = require('./lib/utility.js')(bot, info);
 info.commands = require('./commands/loader.js')(bot,info);
 info.db = require('./lib/db.js')(bot, info);
-//info.web = require('./lib/portal.js')(bot,info);
+info.web = require('./lib/portal.js')(bot,info);
 info.time = require('./tz-pretty.json');
 info.trello = require('./plugins/trello.js')(bot,info);
 info.manualKill = false;
@@ -35,7 +35,6 @@ bot.on('message', function(message) {
   };
 //was it a direct message?
   details.isDirectMessage = details.channelID in bot.directMessages ? true : false;
-  //console.log(details.isDirectMessage);
   if(details.isDirectMessage)
   {
     //checks to see if it started with the prefix(possibly a command)
