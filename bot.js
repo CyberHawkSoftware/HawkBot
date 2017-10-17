@@ -7,7 +7,7 @@ const bot = new Client({
   token: info.config.api.discord_token,
   autorun: true,
   cacheOfflineUsers: true,
-  game: {name: "Try ;help ❤"}});
+  game: {name: "Try <help ❤"}});
 info.utility = require('./lib/utility.js')(bot, info);
 info.commands = require('./commands/loader.js')(bot,info);
 info.db = require('./lib/db.js')(bot, info);
