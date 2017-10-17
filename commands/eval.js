@@ -23,15 +23,13 @@ module.exports = function command(bot, info)
       else
       {
         try{
-          bot.sendMessage({
-            to: details.channelID,
+          bot.sendMessage(details.channelID, {
             message: eval(details.input)
           });
         }
         catch(err)
         {
-          bot.sendMessage({
-            to: details.channelID,
+          bot.sendMessage(details.channelID, {
             message: err
           });
         }

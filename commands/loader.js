@@ -113,8 +113,7 @@ module.exports = function commandLoad(bot,info)
         count ++;
         if(count == Object.keys(commands).length)
         {
-          bot.sendMessage({
-            to: details.channelID,
+          bot.sendMessage(details.channelID, {
             embed: {
               title: 'Help',
               description: 'You can PM the bot :heart:',

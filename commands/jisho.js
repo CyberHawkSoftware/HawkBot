@@ -27,8 +27,7 @@ module.exports = function command(bot, info)
         {
           if (!error && response.statusCode === 200)
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed:{
                 title: '',
                 description: '',
@@ -56,8 +55,7 @@ module.exports = function command(bot, info)
           {
             if(body.data.length > 10 && details.isDirectMessage)
             {
-              bot.sendMessage({
-                to: details.userID,
+              bot.sendMessage(details.userID, {
                 embed: {
                   title: 'Reading List:',
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',
@@ -67,12 +65,10 @@ module.exports = function command(bot, info)
             }
             else if(body.data.length > 10 && !details.isDirectMessage)
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 message: 'The word returned more than 10 items, sending a PM of the list!'
               });
-              bot.sendMessage({
-                to: details.userID,
+              bot.sendMessage(details.userID, {
                 embed: {
                   title: 'Reading List:',
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',
@@ -82,8 +78,7 @@ module.exports = function command(bot, info)
             }
             else
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 embed: {
                   title: 'Reading List:',
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',

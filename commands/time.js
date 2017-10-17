@@ -71,8 +71,7 @@ module.exports = function command(bot, info)
         let localOffset = d.getTimezoneOffset() * 60000;
         let utc = localTime + localOffset;
         let dUTC = new Date(utc);
-        bot.sendMessage({
-          to: details.channelID,
+        bot.sendMessage(details.channelID, {
           embed: {
             title: 'Time',
             description: `${dUTC.toLocaleString()} (UTC)`
@@ -103,8 +102,7 @@ module.exports = function command(bot, info)
           }
           else
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed: {
                 title: 'Time Zone List',
                 description: getZones(1),
@@ -117,8 +115,7 @@ module.exports = function command(bot, info)
         let t = getTime(details.args[1].toUpperCase());
         if(t != undefined)
         {
-          bot.sendMessage({
-            to: details.channelID,
+          bot.sendMessage(details.channelID, {
             embed:{
               title: 'Time',
               description: t

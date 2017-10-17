@@ -50,8 +50,7 @@ module.exports = function command(bot, info)
         });
         return num;
       };
-      bot.sendMessage({
-        to: details.channelID,
+      bot.sendMessage(details.channelID, {
         embed: {
           title: 'HawkBot\'s Stats',
           description: '',

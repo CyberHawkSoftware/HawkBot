@@ -11,8 +11,7 @@ module.exports = function command(bot, info)
     permissions: 'public',
     action: function(details)
     {
-      bot.sendMessage({
-        to: details.channelID,
+      bot.sendMessage(details.channelID, {
         message: pack.homepage
       });
     }

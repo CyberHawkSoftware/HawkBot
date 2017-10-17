@@ -27,8 +27,7 @@ module.exports = function command(bot, info)
           if(!error && response.statusCode === 200)
           {
             //let catResponse = JSON.parse(body);
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed:{
                 title: '',
                 description: '',

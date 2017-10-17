@@ -21,8 +21,7 @@ module.exports = function command(bot, info)
         {
           if(!err && response.statusCode === 200)
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed: prettyDisplay(body)
             });
           }

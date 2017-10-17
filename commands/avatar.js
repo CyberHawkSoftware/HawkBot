@@ -29,8 +29,7 @@ module.exports = function command(bot, info)
       console.log(details.input);
       if(details.input === '')
       {
-        bot.sendMessage({
-          to: details.channelID,
+        bot.sendMessage(details.channelID, {
           embed: {
             title: bot.users[details.userID].username +"'s Avatar",
             image: {
@@ -48,15 +47,13 @@ module.exports = function command(bot, info)
           let link = getAvatar(uid);
           if(link.includes('null.jpg'))
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               message: 'The user has a default avatar.'
             });
           }
           else
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed: {
                 title: bot.users[uid].username+"'s Avatar",
                 image: {
@@ -69,8 +66,7 @@ module.exports = function command(bot, info)
       }
       else
       {
-        bot.sendMessage({
-          to: details.channelID,
+        bot.sendMessage(details.channelID, {
           message: 'Please look at the help menu to see how to properly use the command.'
         });
       }

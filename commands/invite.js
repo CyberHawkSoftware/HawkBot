@@ -11,9 +11,8 @@ module.exports = function command(bot, info)
     permissions: 'public',
     action: function(details)
     {
-      bot.sendMessage({
-        to: details.channelID,
-        message: '<https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0>'
+      bot.sendMessage(details.channelID, {
+        content: '<https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0>'
       });
     }
   };

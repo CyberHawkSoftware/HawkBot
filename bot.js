@@ -1,9 +1,13 @@
 'use strict';
-const discord = require('discord.io');
+const Client = require('dicksword.js');
 const fs = require('fs');
 const info = {};
 info.config = require('./config.json');
-const bot = new discord.Client({token: info.config.api.discord_token, autorun: true });
+const bot = new Client({
+  token: info.config.api.discord_token,
+  autorun: true,
+  cacheOfflineUsers: true,
+  game: {name: "Try ;help ❤"}});
 info.utility = require('./lib/utility.js')(bot, info);
 info.commands = require('./commands/loader.js')(bot,info);
 info.db = require('./lib/db.js')(bot, info);
@@ -19,47 +23,27 @@ let db = info.db;
 info.start = new Date();
 //When the bot is ready
 bot.on('ready', function() {
-  bot.getAllUsers((err) =>
-  {
-    if(err)
-    {
-      console.log(err);
-    }
-  });
   console.log(bot.username + ' - (' + bot.id + ')');
-  //Set the bot's "Playing" to the config file's playing
-  function setPlaying()
-  {
-    bot.setPresence({
-      game:{
-        name: utility.filter(info.config.playing),
-        type: 0
-      }
-    });
-    console.log(`${utility.filter(info.config.playing)} setPresence fired @ ` + new Date());
-  }
-  setTimeout(setPlaying, 10000);
 });
 //When there is a message fired that the bot can see, process it
-bot.on('message', function(user, userID, channelID, message, event) {
+bot.on('message', function(message) {
   const details = {
-    user: user,
-    userID: userID,
-    channelID: channelID,
-    message: message,
-    event: event
+    user: message.author.username,
+    userID: message.author.id,
+    channelID: message.channel_id,
+    message: message.content
   };
 //was it a direct message?
   details.isDirectMessage = details.channelID in bot.directMessages ? true : false;
   if(details.isDirectMessage)
   {
     //checks to see if it started with the prefix(possibly a command)
-    details.isCommandForm = utility.isCommandForm(message);
+    details.isCommandForm = utility.isCommandForm(details.message);
     if(details.isCommandForm)
     {
       details.prefix = config.prefix;
       details.isAdministrator = utility.isAdministrator(details.userID);
-      let cmd = utility.stripPrefix(message);
+      let cmd = utility.stripPrefix(details.message);
       let keyword = cmd.split(' ')[0];
       details.input = cmd.replace(keyword, '').trim();
       //split up the remaining into something similar to command line args
@@ -88,10 +72,10 @@ bot.on('message', function(user, userID, channelID, message, event) {
   }
   else
   {
-    if(bot.channels[channelID].guild_id != undefined)
+    if(bot.channels[details.channelID].guild_id != undefined)
     {
       //checks to see if it started with the Server defined prefix(possibly a command)
-      utility.isServerCommandForm(message, bot.channels[channelID].guild_id).then((info) =>
+      utility.isServerCommandForm(details.message, bot.channels[details.channelID].guild_id).then((info) =>
       {
         details.isCommandForm = info.isCommand;
         //console.log(`This is COMMAND FORM ${isCommand}`);
@@ -109,7 +93,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
           }
           details.serverID = utility.getServerID(details.channelID);
           //separate the command from the rest of the string
-          let cmd = utility.stripServerPrefix(message, info.prefix);
+          let cmd = utility.stripServerPrefix(details.message, info.prefix);
           let keyword = cmd.split(' ')[0];
           details.input = cmd.replace(keyword, '').trim();
           //split up the remaining into something similar to command line args
@@ -179,12 +163,6 @@ bot.on('disconnect',function(errMsg, code)
     info.reload = false;
     bot.connect();
   }
-  else if(!info.manualKill)
-  {
-    //reconnect and log the instance into log.txt
-    bot.connect();
-    fs.appendFile('log.txt', 'Error occured: Error Code ' + code +' - attempting to login ' + new Date() + '\n' , function (err) {});
-  }
   else
   {
     console.log('Kill command used.');
@@ -204,8 +182,7 @@ function processCommand(command, details)
 }
 function disabled(details)
 {
-  bot.sendMessage({
-    to: details.channelID,
+  bot.sendMessage(details.channelID, {
     embed: {
       title: 'Disabled',
       description: 'Looks like that command was disabled'

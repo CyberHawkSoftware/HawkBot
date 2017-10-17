@@ -29,15 +29,13 @@ module.exports = function command(bot, info)
             //console.log(body);
             if(bookResponse.items.length != 0)
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 embed: getInfo(bookResponse.items,n)
               });
             }
             else
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 embed: {
                   title: 'Error',
                   description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
@@ -61,15 +59,13 @@ module.exports = function command(bot, info)
             let bookResponse = JSON.parse(body);
             if(bookResponse.items.length != 0)
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 embed: getList(bookResponse)
               });
             }
             else
             {
-              bot.sendMessage({
-                to: details.channelID,
+              bot.sendMessage(details.channelID, {
                 embed: {
                   title: 'Error',
                   description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
@@ -250,8 +246,7 @@ module.exports = function command(bot, info)
       }
       catch(err)
       {
-        bot.sendMessage({
-          to: details.channelID,
+        bot.sendMessage(details.channelID, {
           embed:{
             title: 'Error',
             description: 'Error occured, if you are using a number in a title try to put it in parenthesis. If the error continues, contact CyberRonin.'
