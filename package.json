@@ -22,7 +22,7 @@
   "homepage": "https://github.com/CyberHawkSoftware/HawkBot#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
-    "dicksword.js": "^0.1.5",
+    "dicksword.js": "^0.1.8",
     "du": "^0.1.0",
     "express": "^4.14.1",
     "express-session": "^1.15.1",
