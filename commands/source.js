@@ -13,6 +13,9 @@ module.exports = function command(bot, info)
     {
       bot.sendMessage(details.channelID, {
         message: pack.homepage
+      }).catch((err) =>
+      {
+        console.log(`In source: ${err}`);
       });
     }
   };

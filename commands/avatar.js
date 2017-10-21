@@ -37,6 +37,9 @@ module.exports = function command(bot, info)
             },
             color: parseInt('808080',16)
           }
+        }).catch((err) =>
+        {
+          console.log(`In avatar: ${err}`);
         });
       }
       else if(details.args.length == 2)
@@ -49,6 +52,9 @@ module.exports = function command(bot, info)
           {
             bot.sendMessage(details.channelID, {
               message: 'The user has a default avatar.'
+            }).catch((err) =>
+            {
+              console.log(`In avatar: ${err}`);
             });
           }
           else
@@ -60,6 +66,9 @@ module.exports = function command(bot, info)
                   url: getAvatar(uid)
                 }
               }
+            }).catch((err) =>
+            {
+              console.log(`In avatar: ${err}`);
             });
           }
         }
@@ -68,6 +77,9 @@ module.exports = function command(bot, info)
       {
         bot.sendMessage(details.channelID, {
           message: 'Please look at the help menu to see how to properly use the command.'
+        }).catch((err) =>
+        {
+          console.log(`In avatar: ${err}`);
         });
       }
     }

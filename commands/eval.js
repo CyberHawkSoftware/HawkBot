@@ -17,6 +17,9 @@ module.exports = function command(bot, info)
         bot.sendMessage({
           to: details.channelID,
           message: str
+        }).catch((err) =>
+        {
+          console.log(`In eval: ${err}`);
         });
       };
       if(details.input === '') {return;}
@@ -25,12 +28,18 @@ module.exports = function command(bot, info)
         try{
           bot.sendMessage(details.channelID, {
             message: eval(details.input)
+          }).catch((err) =>
+          {
+            console.log(`In eval: ${err}`);
           });
         }
         catch(err)
         {
           bot.sendMessage(details.channelID, {
             message: err
+          }).catch((err) =>
+          {
+            console.log(`In eval: ${err}`);
           });
         }
       }

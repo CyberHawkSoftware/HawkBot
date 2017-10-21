@@ -34,6 +34,9 @@ module.exports = function command(bot, info)
                 fields: prettyDisplay(body,n),
                 color: parseInt('a7fcd0', 16)
               }
+            }).catch((err) =>
+            {
+              console.log(`In jisho: ${err}`);
             });
           }
         });
@@ -61,12 +64,18 @@ module.exports = function command(bot, info)
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',
                   color: parseInt('a7fcd0', 16)
                 }
+              }).catch((err) =>
+              {
+                console.log(`In jisho: ${err}`);
               });
             }
             else if(body.data.length > 10 && !details.isDirectMessage)
             {
               bot.sendMessage(details.channelID, {
                 message: 'The word returned more than 10 items, sending a PM of the list!'
+              }).catch((err) =>
+              {
+                console.log(`In jisho: ${err}`);
               });
               bot.sendMessage(details.userID, {
                 embed: {
@@ -74,6 +83,9 @@ module.exports = function command(bot, info)
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',
                   color: parseInt('a7fcd0', 16)
                 }
+              }).catch((err) =>
+              {
+                console.log(`In jisho: ${err}`);
               });
             }
             else
@@ -84,6 +96,9 @@ module.exports = function command(bot, info)
                   description: listJapanese(body) + '\nUse jisho(j) <word> <number on list> to get that definition',
                   color: parseInt('a7fcd0', 16)
                 }
+              }).catch((err) =>
+              {
+                console.log(`In jisho: ${err}`);
               });
             }
           }

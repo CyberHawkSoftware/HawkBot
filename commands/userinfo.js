@@ -89,6 +89,9 @@ module.exports = function command(bot, info)
       {
         bot.sendMessage(details.channelID, {
           embed: getInfo(details.userID)
+        }).catch((err) =>
+        {
+          console.log(`In userinfo: ${err}`);
         });
       }
       else if(details.args.length == 2)
@@ -101,12 +104,18 @@ module.exports = function command(bot, info)
           {
             bot.sendMessage(details.channelID, {
               message: 'The user has a default avatar.'
+            }).catch((err) =>
+            {
+              console.log(`In userinfo: ${err}`);
             });
           }
           else
           {
             bot.sendMessage(details.channelID, {
               embed: getInfo(uid)
+            }).catch((err) =>
+            {
+              console.log(`In userinfo: ${err}`);
             });
           }
         }
@@ -115,6 +124,9 @@ module.exports = function command(bot, info)
       {
         bot.sendMessage(details.channelID, {
           message: 'Please look at the help menu to see how to properly use the command.'
+        }).catch((err) =>
+        {
+          console.log(`In userinfo: ${err}`);
         });
       }
     }

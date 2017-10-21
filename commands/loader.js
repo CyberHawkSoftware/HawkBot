@@ -119,6 +119,9 @@ module.exports = function commandLoad(bot,info)
               description: 'You can PM the bot :heart:',
               fields: lines
             } 
+          }).catch((err) =>
+          {
+            console.log(`In loader(help): ${err}`);
           });
         }
       });

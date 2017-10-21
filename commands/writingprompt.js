@@ -35,6 +35,9 @@ module.exports = function command(bot, info)
                   url: body.url
                 }
               }
+            }).catch((err) =>
+            {
+              console.log(`In writingprompt: ${err}`);
             });
           }
         });

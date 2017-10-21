@@ -187,5 +187,8 @@ function disabled(details)
       title: 'Disabled',
       description: 'Looks like that command was disabled'
     }
+  }).catch((err) =>
+  {
+    console.log(err);
   });
 }

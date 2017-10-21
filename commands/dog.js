@@ -32,6 +32,9 @@ module.exports = function command(bot, info)
                   url: `http://random.dog/${body}`
                 }
               }
+            }).catch((err) =>
+            {
+              console.log(`In dog: ${err}`);
             });
           }
         });

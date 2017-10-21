@@ -23,6 +23,9 @@ module.exports = function command(bot, info)
           {
             bot.sendMessage(details.channelID, {
               embed: prettyDisplay(body)
+            }).catch((err) =>
+            {
+              console.log(`In kanji: ${err}`);
             });
           }
         });

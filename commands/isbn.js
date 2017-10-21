@@ -31,6 +31,9 @@ module.exports = function command(bot, info)
             {
               bot.sendMessage(details.channelID, {
                 embed: getInfo(bookResponse.items,n)
+              }).catch((err) =>
+              {
+                console.log(`In ISBN: ${err}`);
               });
             }
             else
@@ -40,6 +43,9 @@ module.exports = function command(bot, info)
                   title: 'Error',
                   description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
                 }
+              }).catch((err) =>
+              {
+                console.log(`In ISBN: ${err}`);
               });
             }
           }
@@ -61,6 +67,9 @@ module.exports = function command(bot, info)
             {
               bot.sendMessage(details.channelID, {
                 embed: getList(bookResponse)
+              }).catch((err) =>
+              {
+                console.log(`In ISBN: ${err}`);
               });
             }
             else
@@ -70,6 +79,9 @@ module.exports = function command(bot, info)
                   title: 'Error',
                   description: 'An error has occured with that lookup, please try a different name. If the error persists, contact CyberRonin'
                 }
+              }).catch((err) =>
+              {
+                console.log(`In ISBN: ${err}`);
               });
             }
 
@@ -251,6 +263,9 @@ module.exports = function command(bot, info)
             title: 'Error',
             description: 'Error occured, if you are using a number in a title try to put it in parenthesis. If the error continues, contact CyberRonin.'
           }
+        }).catch((err) =>
+        {
+          console.log(`In ISBN: ${err}`);
         });
         console.log(err);
       }

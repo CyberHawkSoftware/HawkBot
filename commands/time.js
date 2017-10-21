@@ -76,6 +76,9 @@ module.exports = function command(bot, info)
             title: 'Time',
             description: `${dUTC.toLocaleString()} (UTC)`
           }
+        }).catch((err) =>
+        {
+          console.log(`In time: ${err}`);
         });
       }
       else if(details.args[1] != undefined)
@@ -97,6 +100,9 @@ module.exports = function command(bot, info)
                   description: getZones(2),
                   footer: {text: 'Page 2'}
                 }
+              }).catch((err) =>
+              {
+                console.log(`In time: ${err}`);
               });
             }
           }
@@ -108,6 +114,9 @@ module.exports = function command(bot, info)
                 description: getZones(1),
                 footer: {text: `Page 1: ${info.config.prefix}time --list 2 for Page 2`}
               }
+            }).catch((err) =>
+            {
+              console.log(`In time: ${err}`);
             });
           }
           return;
@@ -120,6 +129,9 @@ module.exports = function command(bot, info)
               title: 'Time',
               description: t
             } 
+          }).catch((err) =>
+          {
+            console.log(`In time: ${err}`);
           });
         }
         return;

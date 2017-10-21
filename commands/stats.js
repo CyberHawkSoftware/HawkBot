@@ -118,6 +118,9 @@ module.exports = function command(bot, info)
               inline: true
             }]
         }
+      }).catch((err) =>
+      {
+        console.log(`In stats: ${err}`);
       });
     }
   };

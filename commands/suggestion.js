@@ -18,12 +18,9 @@ module.exports = function command(bot, info)
           description: details.input,
           footer: {text: `${details.user}#${bot.users[details.userID].discriminator}` || details.userID}
         }
-      },(err, response) =>
+      }).catch((err) =>
       {
-        if(err)
-        {
-          console.log(err);
-        }
+        console.log(`In suggestion: ${err}`);
       });
     }
   };

@@ -33,6 +33,9 @@ module.exports = function command(bot, info)
                   url: catResponse.file
                 }
               }
+            }).catch((err) =>
+            {
+              console.log(`In cat: ${err}`);
             });
           }
         });

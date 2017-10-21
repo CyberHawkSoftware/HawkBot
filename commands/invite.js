@@ -13,6 +13,9 @@ module.exports = function command(bot, info)
     {
       bot.sendMessage(details.channelID, {
         content: '<https://discordapp.com/oauth2/authorize?client_id=193403294419255297&scope=bot&permissions=0>'
+      }).catch((err) =>
+      {
+        console.log(`In invite: ${err}`);
       });
     }
   };
