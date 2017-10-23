@@ -62,25 +62,23 @@ module.exports = function command(bot, info)
       {
         let voice = 0;
         let text = 0;
+        let cat = 0;
         Object.keys(channels).forEach((key) =>
         {
-          if(channels[key].type == undefined)
+          switch(channels[key].type)
           {
-            text ++;
-          }
-          else
-          {
-            if(channels[key].type == 'text')
-            {
+            case 0:
               text ++;
-            }
-            else
-            {
+              break;
+            case 2:
               voice ++;
-            }
+              break;
+            case 4:
+              cat ++;
+              break;
           }
         });
-        return `${text} Text, ${voice} Voice`;
+        return `${text} Text, ${voice} Voice, ${cat} Categories`;
       };
       const getRoles = function(server)
       {
