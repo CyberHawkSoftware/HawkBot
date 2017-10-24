@@ -16,6 +16,8 @@ module.exports = function command(bot, info)
       const getAvatar = function(uid)
       {
         let ava = undefined;
+        let userAva = bot.users[uid].avatar;
+        if(userAva === null) return `https://cdn.discordapp.com/embed/avatars/${parseInt(bot.users[uid].discriminator, 10) % 5}.png`
         if(bot.users[uid].avatar.startsWith('a_'))
         {
           ava = 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.gif';
@@ -48,29 +50,17 @@ module.exports = function command(bot, info)
         if(uid)
         {
           let link = getAvatar(uid);
-          if(link.includes('null.jpg'))
-          {
-            bot.sendMessage(details.channelID, {
-              message: 'The user has a default avatar.'
-            }).catch((err) =>
-            {
-              console.log(`In avatar: ${err}`);
-            });
-          }
-          else
-          {
-            bot.sendMessage(details.channelID, {
-              embed: {
-                title: bot.users[uid].username+"'s Avatar",
-                image: {
-                  url: getAvatar(uid)
-                }
+          bot.sendMessage(details.channelID, {
+            embed: {
+              title: bot.users[uid].username+"'s Avatar",
+              image: {
+                url: getAvatar(uid)
               }
-            }).catch((err) =>
-            {
-              console.log(`In avatar: ${err}`);
-            });
-          }
+            }
+          }).catch((err) =>
+          {
+            console.log(`In avatar: ${err}`);
+          });
         }
       }
       else
