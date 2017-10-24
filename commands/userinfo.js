@@ -74,6 +74,8 @@ module.exports = function command(bot, info)
       const getAvatar = function(uid)
       {
         let ava = undefined;
+        let userAva = bot.users[uid].avatar;
+        if(userAva === null) return `https://cdn.discordapp.com/embed/avatars/${parseInt(bot.users[uid].discriminator, 10) % 5}.png`
         if(bot.users[uid].avatar.startsWith('a_'))
         {
           ava = 'https://cdn.discordapp.com/avatars/' +uid+'/'+bot.users[uid].avatar+'.gif';
@@ -84,7 +86,6 @@ module.exports = function command(bot, info)
         }
         return ava;
       };
-      //console.log(details.input);
       if(details.input === '')
       {
         bot.sendMessage(details.channelID, {
