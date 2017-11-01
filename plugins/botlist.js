@@ -38,16 +38,6 @@ module.exports = function plugin(bot, info)
           },
         body: JSON.stringify(status)
       };
-      let botsOrg = {
-        url: 'https://discordbots.org/api/bots/193403332046487552/stats',
-        method: 'POST',
-        headers: {
-          'Authorization': info.config.api.botsOrg,
-          'content-type': 'application/json'
-        },
-        form: status
-      };
-      submit(botsOrg);
       submit(botsPW);
     });
   };

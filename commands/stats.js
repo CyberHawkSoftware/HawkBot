@@ -113,8 +113,13 @@ module.exports = function command(bot, info)
               inline: false
             },
             {
+              name: 'Patreon',
+              value: 'https://www.patreon.com/cyberronin',
+              inline: true
+            },
+            {
               name: 'Github',
-              value: '[Public Branch - no audio](https://github.com/CyberHawkSoftware/HawkBot/tree/public)',
+              value: '[Public Branch](https://github.com/CyberHawkSoftware/HawkBot/tree/public)',
               inline: true
             }]
         }
