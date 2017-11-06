@@ -2,7 +2,6 @@
 module.exports = function command(bot, info)
 {
   'use strict';
-  const pack = require('../package.json');
   return {
     name: 'Source',
     inline: true,
@@ -12,7 +11,7 @@ module.exports = function command(bot, info)
     action: function(details)
     {
       bot.sendMessage(details.channelID, {
-        message: pack.homepage
+        content: 'https://github.com/CyberHawkSoftware/HawkBot'
       }).catch((err) =>
       {
         console.log(`In source: ${err}`);
