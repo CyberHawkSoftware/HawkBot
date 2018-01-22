@@ -23,13 +23,13 @@ module.exports = function plugin(bot, info)
       }
     });
   };
-  bot.on('messageReactionAdd', (e) =>
+  bot.on('messageReactionAdd', (reaction) =>
   {
-    if(e.d.user_id === '190175637271478273' && e.d.channel_id === info.config.suggestion_channel && e.d.emoji.name === '👍')
+    if(reaction.user_id === '190175637271478273' && reaction.channel_id === info.config.suggestion_channel && reaction.emoji.name === '👍')
     {
       bot.getMessage({
         channelID: info.config.suggestion_channel,
-        messageID: e.d.message_id
+        messageID: reaction.d.message_id
       },(err, message) =>
       {
         if(err)
