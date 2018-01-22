@@ -11,8 +11,7 @@ module.exports = function command(bot, info)
     permissions: 'public',
     action: function(details)
     {
-      bot.sendMessage({
-        to: info.config.suggestion_channel,
+      bot.sendMessage(info.config.suggestion_channel, {
         embed: {
           title: 'Suggestion',
           description: details.input,
