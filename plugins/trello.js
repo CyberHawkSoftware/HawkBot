@@ -29,7 +29,6 @@ module.exports = function plugin(bot, info)
     {
       bot.getMessage(info.config.suggestion_channel,reaction.message_id).then((message) =>
       {
-        console.log(message);
         let newCard = {
           name: `${message.embeds[0].description}\n${message.embeds[0].footer.text}`,
           idList: '58fe3b0d4e2f17d3cddb5f11',
@@ -43,6 +42,5 @@ module.exports = function plugin(bot, info)
       });
     }
   });
-
   return plugin;
 };
