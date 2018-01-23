@@ -27,25 +27,18 @@ module.exports = function plugin(bot, info)
   {
     if(reaction.user_id === '190175637271478273' && reaction.channel_id === info.config.suggestion_channel && reaction.emoji.name === '👍')
     {
-      bot.getMessage({
-        channelID: info.config.suggestion_channel,
-        messageID: reaction.d.message_id
-      },(err, message) =>
+      bot.getMessage(info.config.suggestion_channel,reaction.message_id).then((message) =>
       {
-        if(err)
-        {
-          console.log(err);
-        }
-        else
-        {
-          let newCard = {
-            name: `${message.embeds[0].description}\n${message.embeds[0].footer.text}`,
-            idList: '58fe3b0d4e2f17d3cddb5f11',
-            pos: 'top',
-            idLabels: '58fe3a14ced82109ff526fbf'
-          };
-          createCard(newCard);
-        }
+        let newCard = {
+          name: `${message.embeds[0].description}\n${message.embeds[0].footer.text}`,
+          idList: '58fe3b0d4e2f17d3cddb5f11',
+          pos: 'top',
+          idLabels: '58fe3a14ced82109ff526fbf'
+        };
+        createCard(newCard);
+      }).catch((err) => 
+      {
+        console.log(err);
       });
     }
   });
