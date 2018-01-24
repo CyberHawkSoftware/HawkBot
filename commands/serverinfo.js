@@ -41,7 +41,7 @@ module.exports = function command(bot, info)
           let channels = {name: 'Channels', value: getChannelInfo(server.channels) };
           fields.push(channels);
           //member count
-          let members = {name: 'Members', value: `${server.member_count} Members`};
+          let members = {name: 'Members', value: `${server.member_count} Members, ${getNormies()} Normies`};
           fields.push(members);
           //roles
           let serverRoles = {name: 'Roles', value: getRoles(bot.servers[details.serverID])};
@@ -109,6 +109,15 @@ module.exports = function command(bot, info)
         let dUTC = new Date(utc);
         return `${d.toUTCString()}`;
 
+      };
+      const getNormies = function()
+      {
+        let normies = 0;
+        Object.keys(bot.servers[details.serverID].members).forEach((memberID) =>
+        {
+          bot.servers[details.serverID].members[memberID].roles.length === 0 && bot.servers[details.serverID].members[memberID].bot == false ? normies ++ : '';
+        });
+        return normies;
       };
       const getIcon = function(sid)
       {
