@@ -27,21 +27,20 @@ module.exports = function command(bot, info)
         let normies = getNormies().join('\n');
         if(normies.length > 2000)
         {
-          bot.sendMessage(details.serverID, {embed: {title: 'Error', description: 'This server is full of normies.'}});
+          bot.sendMessage(details.channelID, {embed: {title: 'Error', description: 'This server is full of normies.'}});
         }
         else
         {
-          let normieEmbed = 
-          {
+          let normieEmbed = {
             title: 'Normies',
-            description: normies
+            description: normies.length < 1 ? 'You have no normies here.' : normies
           };
-          bot.sendMessage(details.serverID, {embed: normiesEmbed});
+          bot.sendMessage(details.channelID, {embed: normieEmbed});
         }
       }
       else
       {
-        bot.sendMessage(details.serverID, {embed: {title: 'Error', description: `Uh oh, you're not in a server or the command is borked.`}});
+        bot.sendMessage(details.channelID, {embed: {title: 'Error', description: `Uh oh, you're not in a server or the command is borked.`}});
       }
     }
   };
