@@ -16,20 +16,22 @@ module.exports = function command(bot, info)
       const searchKanji = function(kanji)
       {
         let options = {}
-        options.url = `https://skurt.me/api/kanji/find/${urlencode(kanji)}`;
-        options.json = true;
-        options.headers = {Authorization: info.config.api.kanji};
-        request(options, (err, response, body) =>
+            options.url = `https://skurt.me/api/kanji/find/${urlencode(kanji)}`;
+            options.json = true;
+            options.headers = {Authorization: info.config.api.kanji};
+            request(options, (err, response, body) =>
         {
           if(!err && response.statusCode === 200)
           {
-            bot.sendMessage({
-              to: details.channelID,
+            bot.sendMessage(details.channelID, {
               embed: prettyDisplay(body)
-            })
+            }).catch((err) =>
+            {
+              console.log(`In kanji: ${err}`);
+            });
           }
         });
-      }
+      };
       const prettyDisplay = function(body)
       {
         let emb = {};
@@ -95,10 +97,9 @@ module.exports = function command(bot, info)
           emb.description = 'There was no result for what you searched. If this is an error of the command, please contact CyberRonin';
           return emb;
         }
-        
       }
 
-      if(details.input === "") {return;}
+      if(details.input === '') {return;}
       else
       {
         searchKanji(details.args[1]);
