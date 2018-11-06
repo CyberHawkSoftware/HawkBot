@@ -5,7 +5,7 @@ module.exports = function command(bot, info)
   return {
     name: 'Source',
     inline: true,
-    alias: ['so'],
+    alias: ['git'],
     description: 'Gets the bot\'s source',
     permissions: 'public',
     action: function(details)

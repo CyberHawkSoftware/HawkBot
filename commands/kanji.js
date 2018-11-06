@@ -15,11 +15,11 @@ module.exports = function command(bot, info)
     {
       const searchKanji = function(kanji)
       {
-        let options = {}
-            options.url = `https://skurt.me/api/kanji/find/${urlencode(kanji)}`;
-            options.json = true;
-            options.headers = {Authorization: info.config.api.kanji};
-            request(options, (err, response, body) =>
+        let options = {};
+        options.url = `https://skurt.me/api/kanji/find/${urlencode(kanji)}`;
+        options.json = true;
+        options.headers = {Authorization: info.config.api.kanji};
+        request(options, (err, response, body) =>
         {
           if(!err && response.statusCode === 200)
           {
